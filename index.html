@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airplane Modes</title>
+    <link href="./main.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Airplane Modes</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Essentials</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <div class="entry">
+                <h2>configuring express</h2>
+                <div class="sample-box">
+                    <code>
+                        const express = require('express');<br>
+                        const app = express();<br>
+                        app.use(express.json());<br><br>
+                        app.listen(4000, () => {<br>
+                        console.log('Server works');<br>
+                        });
+                    </code>
+                </div>
+                <p>Launching an express server</p>
+            </div>
+        </article>
+        <article>
+            <div class="entry">
+                <h2>connecting psql</h2>
+                <div class="sample-box">
+                    <code>
+                        const pg = require('pg');<br><br>
+                        const pool = new psql.Pool({<br>
+                            user: "postgres",<br>
+                            host: "localhost",<br>
+                            database: "dbname",<br>
+                            port: 5432<br>
+                        });
+                    </code>
+                </div>
+                <p>Connecting to the database</p>
+            </div>
+        </article>
+        <article>
+            <div class="entry">
+                <h2>git version control</h2>
+                <div class="sample-box">
+                    <code>
+                        git init<br>
+                        git status<br>
+                        git add .<br>
+                        git commit<br>
+                        git remote add<br>
+                        git remote -v<br>
+                        git branch -M main<br>
+                        git push
+                    </code>
+                </div>
+                <p>Managing git repository</p>
+            </div>
+        </article>
+        <article>
+            <div class="entry">
+                <h2>file system trees</h2>
+                <div class="sample-box">
+                    <code>
+                        /<br>
+                        /bin<br>
+                        /sbin<br>
+                        /usr/bin
+                    </code>
+                </div>
+                <p>/usr/local/bin</p>
+            </div>
+        </article>
+        <article>
+            <div class="entry">
+                <h2>npm</h2>
+                <div class="sample-box">
+                    <code>
+                        npm init
+                    </code>
+                </div>
+                <p>Create a package.json file</p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
