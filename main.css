@@ -25,7 +25,7 @@ header {
 
 header li {
     list-style: none;
-    padding: 2px 20px;
+    padding: 3px 20px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -58,6 +58,13 @@ main {
     width: 380px;
     height: 200px;
     border: 5px #555 solid;
+}
+
+
+@media screen and (max-width: 800px) {
+    .entry {
+        width: 300px;
+    }
 }
 
 .sample-box {
