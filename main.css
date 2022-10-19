@@ -41,7 +41,7 @@ header a {
 }
 
 header a:hover {
-    color: #b2dfdb;
+    color: black;
 }
 
 main {
@@ -52,7 +52,7 @@ main {
 }
 
 .entry {
-    margin: 50px;
+    margin: 30px;
     padding-top: 10px;
     text-align: center;
     width: 380px;
