@@ -58,6 +58,11 @@ main {
     width: 380px;
     height: 200px;
     border: 5px #555 solid;
+    transition: all 0.5s ease-in-out;
+}
+
+.entry:hover {
+    background-color: #919191;
 }
 
 
@@ -74,6 +79,7 @@ main {
     height: 100px;
     width: 220px;
     border: 2px #555 solid;
+    background-color: white;
 }
 
 #projects {
