@@ -10,6 +10,12 @@
 <body>
     <header>
         <h1 id="main-title">Airplane Modes</h1>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+          </label>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Essentials</a></li>
@@ -166,6 +172,19 @@
                 <p>Testing http requests</p>
             </div>
         </article>
+        <article>
+            <div class="entry">
+                <h2>environmental</h2>
+                <div class="sample-box">
+                    <code>
+                        PROMPT="%F{046}%n %~ $ %f"<br>
+                        export CLICOLOR=1
+                    </code>
+                </div>
+                <p>$PATH</p>
+            </div>
+        </article>
     </main>
+    <script src="toggle.js"></script>
 </body>
 </html>
