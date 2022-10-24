@@ -1,3 +1,6 @@
+/*********
+* Main
+**********/
 * {
     margin: 0;
     padding: 0;
@@ -69,6 +72,11 @@ header a:hover {
     color: var(--heading-color);
 }
 
+#intro {
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +125,10 @@ main {
 
 
 
-/* Slider */
+
+/*********
+* Slider
+**********/
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
