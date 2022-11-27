@@ -1,243 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airplane Modes</title>
-    <link href="main.css" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airplane Modes</title>
+  <link href="main.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon-57x57.png" sizes="57x57"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-72x72.png" sizes="72x72"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-76x76.png" sizes="76x76"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-114x114.png" sizes="114x114"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-120x120.png" sizes="120x120"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-144x144.png" sizes="144x144"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-152x152.png" sizes="152x152"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180"/>
 </head>
 <body>
-    <header>
-        <h1 id="main-title">Airplane Modes</h1>
-        <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-          </label>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Essentials</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="https://www.codewars.com/users/airplanemodes">Codewars</a></li>
-                <li><a href="https://soundcloud.com/airplanemodes">SoundCloud</a></li>
-                <li><a href="https://github.com/airplanemodes">GitHub</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1 id="main-title">Airplane Modes</h1>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox"/>
+          <div class="slider round"></div>
+        </label>
+      </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Essentials</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="https://www.codewars.com/users/airplanemodes">Codewars</a></li>
+        <li><a href="https://soundcloud.com/airplanemodes">SoundCloud</a></li>
+        <li><a href="https://github.com/airplanemodes">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
     <p id="intro">My digital sketchbook.</p>
     <main>
-        <article>
-            <div class="entry">
-                <h2>configuring express</h2>
-                <div class="sample-box">
-                    <code>
-                        const express = require('express');<br>
-                        const app = express();<br>
-                        app.use(express.json());<br><br>
-                        app.listen(4000, () => {<br>
-                        console.log('Server works');<br>
-                        });
-                    </code>
-                </div>
-                <p>Launching an express server</p>
+      <article>
+        <div class="entry">
+          <h2>configuring express</h2>
+            <div class="sample-box">
+              <code>
+                const express = require('express');<br>
+                const app = express();<br>
+                app.use(express.json());<br><br>
+                app.listen(4000, () => {<br>
+                console.log('Server works');<br>
+                });
+              </code>
             </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>connecting psql</h2>
-                <div class="sample-box">
-                    <code>
-                        const pg = require('pg');<br><br>
-                        const pool = new psql.Pool({<br>
-                            user: "postgres",<br>
-                            host: "localhost",<br>
-                            database: "dbname",<br>
-                            port: 5432<br>
-                        });
-                    </code>
-                </div>
-                <p>Connecting to the database</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>git version control</h2>
-                <div class="sample-box">
-                    <code>
-                        git init<br>
-                        git add .<br>
-                        git commit<br>
-                        git remote add<br><br>
-                        git status<br>
-                        git remote -v<br>
-                        git branch -M main<br>
-                        git push
-                    </code>
-                </div>
-                <p>Managing git repository</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>file system tree</h2>
-                <div class="sample-box">
-                    <code>
-                        /<br>
-                        /bin<br>
-                        /dev<br>
-                        /etc<br>
-                        /sbin<br><br>
-                        /usr/bin<br>
-                        /var
-                    </code>
-                </div>
-                <p>/usr/local/bin</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>package.json</h2>
-                <div class="sample-box">
-                    <code>
-                        npm init<br><br>
-                        version<br>
-                        description<br>
-                        keywords<br>
-                        git repository<br>
-                        author<br>
-                        license
-                    </code>
-                </div>
-                <p>Initialization</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>build from scratch</h2>
-                <div class="sample-box">
-                    <code>
-                        npm i react react-dom<br>
-                        npm i -D @babel/core @babel/cli<br>
-                        @babel/preset-react<br>
-                        webpack webpack-cli<br>
-                        babel-loader html-webpack-plugin<br><br>
-                        touch webpack.config.js<br>
-                        ...<br>
-                        npm run build
-                    </code>
-                </div>
-                <p>React setup</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>react router</h2>
-                <div class="sample-box">
-                    <code>
-                        npm i react-router-dom<br><br>
-                        import {<br>
-                            BrowserRouter<br>
-                            Routes<br>
-                            Route<br>
-                        } from 'react-router-dom';
-                    </code>
-                </div>
-                <p>Client-side routing</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>unix utilites</h2>
-                <div class="sample-box">
-                    <code>
-                        ls, cd, pwd<br>
-                        mv, cp, rm<br>
-                        touch, mkdir<br>
-                        find, grep<br><br>
-                        tar<br>
-                        pico<br>
-                        whoami
-                    </code>
-                </div>
-                <p>Shell interaction</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>curl</h2>
-                <div class="sample-box">
-                    <code>
-                        curl https://curl.se<br>
-                        curl -o page.html https://curl.se<br><br>
-                        curl -X POST -d '{"key":"value"}'<br>
-                        -H "Content-Type: application/json"
-                        http://localhost:4000/
-                    </code>
-                </div>
-                <p>Testing http requests</p>
-            </div>
-        </article>
-        <article>
-            <div class="entry">
-                <h2>environmental</h2>
-                <div class="sample-box">
-                    <code>
-                        PROMPT="%F{046}%n %~ $ %f"<br>
-                        export CLICOLOR=1<br><br>
-                        export PATH="$PATH:/.../"<br><br>
-                        printenv<br>
-                        sudo pico /etc/paths
-                    </code>
-                </div>
-                <p>echo $PATH</p>
-            </div>
-        </article>
-        <article>
-          <div class="entry">
-              <h2>vim</h2>
-              <div class="sample-box">
-                  <code>
-                      :qa!<br>
-                      :w<br>
-                      jjjjj<br>
-                      kk<br>
-                      ddp<br>
-                      :!touch index.html<br>
-                      :Explore<br>
-                      vi vimrc<br>
-                      set number
-                  </code>
-              </div>
-              <p>Editing code in non-GUI environments</p>
-          </div>
+          <p>Launching an express server</p>
+        </div>
       </article>
       <article>
         <div class="entry">
-            <h2>licensing</h2>
+          <h2>connecting psql</h2>
             <div class="sample-box">
-                <code>
-                  MIT License<br>
-                  GNU GPL<br>
-                  BSD License<br>
-                  MPL
-                </code>
+              <code>
+                const pg = require('pg');<br><br>
+                const pool = new psql.Pool({<br>
+                    user: "postgres",<br>
+                    host: "localhost",<br>
+                    database: "dbname",<br>
+                    port: 5432<br>
+                });
+              </code>
             </div>
-            <p>Applying a license</p>
+          <p>Connecting a database</p>
         </div>
-    </article>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>git version control</h2>
+            <div class="sample-box">
+              <code>
+                git init<br>
+                git add .<br>
+                git commit<br>
+                git remote add<br><br>
+                git status<br>
+                git remote -v<br>
+                git branch -M main<br>
+                git push
+              </code>
+            </div>
+          <p>Managing git repository</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>file system tree</h2>
+            <div class="sample-box">
+              <code>
+                /<br>
+                /bin<br>
+                /dev<br>
+                /etc<br>
+                /sbin<br><br>
+                /usr/bin<br>
+                /var
+              </code>
+            </div>
+          <p>/usr/local/bin</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>package.json</h2>
+            <div class="sample-box">
+              <code>
+                npm init<br><br>
+                version<br>
+                description<br>
+                keywords<br>
+                git repository<br>
+                author<br>
+                license
+              </code>
+            </div>
+          <p>Initialization</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>build from scratch</h2>
+            <div class="sample-box">
+              <code>
+                npm i react react-dom<br>
+                npm i -D @babel/core @babel/cli<br>
+                @babel/preset-react<br>
+                webpack webpack-cli<br>
+                babel-loader html-webpack-plugin<br><br>
+                touch webpack.config.js<br>
+                ...<br>
+                npm run build
+              </code>
+            </div>
+          <p>React setup</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>react router</h2>
+            <div class="sample-box">
+              <code>
+                npm i react-router-dom<br><br>
+                import {<br>
+                    BrowserRouter<br>
+                    Routes<br>
+                    Route<br>
+                } from 'react-router-dom';
+              </code>
+            </div>
+          <p>Client-side routing</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>unix utilites</h2>
+            <div class="sample-box">
+              <code>
+                ls, cd, pwd<br>
+                mv, cp, rm<br>
+                touch, mkdir<br>
+                find, grep<br><br>
+                tar<br>
+                pico<br>
+                whoami
+              </code>
+            </div>
+          <p>Shell interaction</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>curl</h2>
+            <div class="sample-box">
+              <code>
+                curl https://curl.se<br>
+                curl -o page.html https://curl.se<br><br>
+                curl -X POST -d '{"key":"value"}'<br>
+                -H "Content-Type: application/json"
+                http://localhost:4000/
+              </code>
+            </div>
+          <p>Testing http requests</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>environmental</h2>
+            <div class="sample-box">
+              <code>
+                PROMPT="%F{046}%n %~ $ %f"<br>
+                export CLICOLOR=1<br><br>
+                export PATH="$PATH:/.../"<br><br>
+                printenv<br>
+                sudo pico /etc/paths
+              </code>
+            </div>
+          <p>echo $PATH</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>vim</h2>
+            <div class="sample-box">
+              <code>
+                :qa!<br>
+                :w<br>
+                jjjjj<br>
+                kk<br>
+                ddp<br>
+                :!touch index.html<br>
+                :Explore<br>
+                vi vimrc<br>
+                set number
+              </code>
+            </div>
+          <p>Editing code in non-GUI environments</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>licensing</h2>
+            <div class="sample-box">
+              <code>
+                MIT License<br>
+                GNU GPL<br>
+                BSD License<br>
+                MPL
+              </code>
+            </div>
+          <p>Applying a license</p>
+        </div>
+      </article>
     </main>
-    <script src="toggle.js"></script>
+  <script src="toggle.js"></script>
 </body>
 </html>
