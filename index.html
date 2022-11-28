@@ -110,6 +110,54 @@
       </article>
       <article>
         <div class="entry">
+          <h2>unix utilites</h2>
+            <div class="sample-box">
+              <code>
+                ls, cd, pwd<br>
+                mv, cp, rm<br>
+                touch, mkdir<br>
+                find, grep<br><br>
+                tar<br>
+                pico<br>
+                whoami
+              </code>
+            </div>
+          <p>Shell interaction</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>curl</h2>
+            <div class="sample-box">
+              <code>
+                curl https://curl.se<br>
+                curl -o page.html https://curl.se<br><br>
+                curl -X POST -d '{"key":"value"}'<br>
+                -H "Content-Type: application/json"
+                http://localhost:4000/
+              </code>
+            </div>
+          <p>Testing http requests</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>react router</h2>
+            <div class="sample-box">
+              <code>
+                npm i react-router-dom<br><br>
+                import {<br>
+                    BrowserRouter<br>
+                    Routes<br>
+                    Route<br>
+                } from 'react-router-dom';
+              </code>
+            </div>
+          <p>Client-side routing</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
           <h2>package.json</h2>
             <div class="sample-box">
               <code>
@@ -141,54 +189,6 @@
               </code>
             </div>
           <p>React setup</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2>react router</h2>
-            <div class="sample-box">
-              <code>
-                npm i react-router-dom<br><br>
-                import {<br>
-                    BrowserRouter<br>
-                    Routes<br>
-                    Route<br>
-                } from 'react-router-dom';
-              </code>
-            </div>
-          <p>Client-side routing</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2>unix utilites</h2>
-            <div class="sample-box">
-              <code>
-                ls, cd, pwd<br>
-                mv, cp, rm<br>
-                touch, mkdir<br>
-                find, grep<br><br>
-                tar<br>
-                pico<br>
-                whoami
-              </code>
-            </div>
-          <p>Shell interaction</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2>curl</h2>
-            <div class="sample-box">
-              <code>
-                curl https://curl.se<br>
-                curl -o page.html https://curl.se<br><br>
-                curl -X POST -d '{"key":"value"}'<br>
-                -H "Content-Type: application/json"
-                http://localhost:4000/
-              </code>
-            </div>
-          <p>Testing http requests</p>
         </div>
       </article>
       <article>
@@ -237,6 +237,24 @@
               </code>
             </div>
           <p>Applying a license</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>sql queries</h2>
+            <div class="sample-box">
+              <code>
+                CREATE DATABASE main;<br>
+                CREATE TABLE users (<br>
+                  id SERIAL PRIMARY KEY,<br>
+                  name VARCHAR(16) UNIQUE NOT NULL);<br><br>
+                SELECT * FROM users;<br>
+                INSERT INTO (users) VALUES ($1, $2)<br>
+                DELETE FROM users WHERE id > 1;<br>
+                DROP DATABASE main;
+              </code>
+            </div>
+          <p>Maintaining a database</p>
         </div>
       </article>
     </main>
