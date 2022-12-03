@@ -81,8 +81,9 @@
                 git init<br>
                 git add .<br>
                 git commit -m<br>
-                git remote add<br><br>
+                git remote add<br>
                 git status<br>
+                git log<br>
                 git remote -v<br>
                 git branch -M main<br>
                 git push
@@ -196,9 +197,11 @@
           <h2>environmental</h2>
             <div class="sample-box">
               <code>
+                sudo pico .zshrc<br>
                 PROMPT="%F{046}%n %~ $ %f"<br>
-                export CLICOLOR=1<br><br>
-                export PATH="$PATH:/.../"<br><br>
+                export CLICOLOR=1<br>
+                export PATH="$PATH:/.../"<br>
+                alias ls="ls -alh"<br><br>
                 printenv<br>
                 sudo pico /etc/paths
               </code>
