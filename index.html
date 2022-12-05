@@ -143,18 +143,19 @@
       </article>
       <article>
         <div class="entry">
-          <h2>react router</h2>
+          <h2>managing permissions</h2>
             <div class="sample-box">
               <code>
-                npm i react-router-dom<br><br>
-                import {<br>
-                    BrowserRouter<br>
-                    Routes<br>
-                    Route<br>
-                } from 'react-router-dom';
+                chmod 755<br>
+                chmod 644<br>
+                chown -R user:group<br>
+                chmod +x<br>
+                chmod go-rwx<br>
+                chflags hidden<br>
+                chflags nohidden
               </code>
             </div>
-          <p>Client-side routing</p>
+          <p>Access control</p>
         </div>
       </article>
       <article>
@@ -295,19 +296,18 @@
       </article>
       <article>
         <div class="entry">
-          <h2>managing permissions</h2>
+          <h2>react router</h2>
             <div class="sample-box">
               <code>
-                chmod 755<br>
-                chmod 644<br>
-                chown -R user:group<br>
-                chmod +x<br>
-                chmod go-rwx<br>
-                chflags hidden<br>
-                chflags nohidden
+                npm i react-router-dom<br><br>
+                import {<br>
+                    BrowserRouter<br>
+                    Routes<br>
+                    Route<br>
+                } from 'react-router-dom';
               </code>
             </div>
-          <p>Access control</p>
+          <p>Client-side routing</p>
         </div>
       </article>
     </main>
