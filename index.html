@@ -176,20 +176,20 @@
       </article>
       <article>
         <div class="entry">
-          <h2>react manual setup</h2>
+          <h2>sql</h2>
             <div class="sample-box">
               <code>
-                npm i react react-dom<br>
-                npm i -D @babel/core @babel/cli<br>
-                @babel/preset-react<br>
-                webpack webpack-cli<br>
-                babel-loader html-webpack-plugin<br><br>
-                touch webpack.config.js<br>
-                ...<br>
-                npm run build
+                CREATE DATABASE main;<br>
+                CREATE TABLE users (<br>
+                  id SERIAL PRIMARY KEY,<br>
+                  name VARCHAR(16) UNIQUE NOT NULL);<br><br>
+                SELECT * FROM users;<br>
+                INSERT INTO (users) VALUES ($1, $2)<br>
+                DELETE FROM users WHERE id > 1;<br>
+                DROP DATABASE main;
               </code>
             </div>
-          <p>Understanding bundler and compiler</p>
+          <p>Database queries</p>
         </div>
       </article>
       <article>
@@ -246,20 +246,20 @@
       </article>
       <article>
         <div class="entry">
-          <h2>sql</h2>
+          <h2>react manual setup</h2>
             <div class="sample-box">
               <code>
-                CREATE DATABASE main;<br>
-                CREATE TABLE users (<br>
-                  id SERIAL PRIMARY KEY,<br>
-                  name VARCHAR(16) UNIQUE NOT NULL);<br><br>
-                SELECT * FROM users;<br>
-                INSERT INTO (users) VALUES ($1, $2)<br>
-                DELETE FROM users WHERE id > 1;<br>
-                DROP DATABASE main;
+                npm i react react-dom<br>
+                npm i -D @babel/core @babel/cli<br>
+                @babel/preset-react<br>
+                webpack webpack-cli<br>
+                babel-loader html-webpack-plugin<br><br>
+                touch webpack.config.js<br>
+                ...<br>
+                npm run build
               </code>
             </div>
-          <p>Database queries</p>
+          <p>Understanding bundler and compiler</p>
         </div>
       </article>
       <article>
