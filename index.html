@@ -232,18 +232,71 @@
       </article>
       <article>
         <div class="entry">
-          <h2>licensing</h2>
+          <h2>python</h2>
             <div class="sample-box">
               <code>
-                MIT License<br>
-                GNU GPL<br>
-                BSD Licenses<br>
-                ISC License<br>
-                Creative Commons<br>
-                MPL<br>
+                def invert(lst):<br>
+                  for i in range(len(lst)):<br>
+                    if lst[i] &lt; 0:<br>
+                      lst[i] = abs(lst[i])<br>
+                    else:<br>
+                      lst[i] = -abs(lst[i])<br>
+                  return lst<br>
+                  ...<br>
+                  Django
               </code>
             </div>
-          <p>Applying a license</p>
+          <p>Interpreted alternative</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>the c programming language</h2>
+            <div class="sample-box">
+              <code>
+                #include &lt;stdio.h&gt;<br>
+                int main() {<br>
+                  int arr[] = {10, 25, 30, 40};<br>
+                  int i;<br>
+                  for (i = 0; i < 4; i++) {<br>
+                    printf("Num is: %d\n", arr[i]);
+                  }<br>
+                  return 0;<br>
+                }
+              </code>
+            </div>
+          <p>Behind the operating system</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>c++</h2>
+            <div class="sample-box">
+              <code>
+                #include &lt;iostream&gt;<br>
+                #include &lt;string&gt;<br><br>
+                int main() {<br>
+                  std::string greetings = "Hello!";<br>
+                  std::cout << greetings;<br>
+                  return 0;<br>
+                }
+              </code>
+            </div>
+          <p>Desktop applications</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>virtualization</h2>
+            <div class="sample-box">
+              <code>
+                VirtualBox (x86-64)<br>
+                VMWare<br><br>
+                QEMU<br><br>
+                Docker, Kubernetes
+              </code>
+            </div>
+          <p>Cross-platform testing</p>
         </div>
       </article>
       <article>
@@ -264,39 +317,6 @@
       </article>
       <article>
         <div class="entry">
-          <h2>c programming language</h2>
-            <div class="sample-box">
-              <code>
-                #include &lt;stdio.h&gt;<br>
-                int main() {<br>
-                  int arr[] = {10, 25, 30, 40};<br>
-                  int i;<br>
-                  for (i = 0; i < 4; i++) {<br>
-                    printf("Num is: %d\n", arr[i]);
-                  }<br>
-                  return 0;<br>
-                }
-              </code>
-            </div>
-          <p>Behind the operating system</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2>virtualization</h2>
-            <div class="sample-box">
-              <code>
-                VirtualBox (x86-64)<br>
-                VMWare<br><br>
-                QEMU<br><br>
-                Docker, Kubernetes
-              </code>
-            </div>
-          <p>Cross-platform testing</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
           <h2>react manual setup</h2>
             <div class="sample-box">
               <code>
@@ -311,6 +331,22 @@
               </code>
             </div>
           <p>Understanding bundler and compiler</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>licensing</h2>
+            <div class="sample-box">
+              <code>
+                MIT License<br>
+                GNU GPL<br>
+                BSD Licenses<br>
+                ISC License<br>
+                Creative Commons<br>
+                MPL<br>
+              </code>
+            </div>
+          <p>Applying a license</p>
         </div>
       </article>
       <article>
