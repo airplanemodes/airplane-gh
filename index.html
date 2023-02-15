@@ -255,13 +255,14 @@
           <h2>environmental</h2>
             <div class="sample-box">
               <code>
-                sudo pico .zshrc<br>
+                vi .zshrc<br>
                 PROMPT="%F{046}%n %~ $ %f"<br>
                 export CLICOLOR=1<br>
                 export PATH="$PATH:/.../"<br>
                 alias ls="ls -ahl"<br><br>
-                printenv<br>
-                sudo pico /etc/paths
+                cat /etc/paths<br>
+                sudo vi /etc/paths<br>
+                printenv
               </code>
             </div>
           <p>echo $PATH</p>
