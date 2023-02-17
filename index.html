@@ -256,12 +256,13 @@
             <div class="sample-box">
               <code>
                 vi .zshrc<br>
-                PROMPT="%F{046}%n %~ $ %f"<br>
-                export CLICOLOR=1<br>
+                alias ls="ls -ahl"<br>
                 export PATH="$PATH:/.../"<br>
-                alias ls="ls -ahl"<br><br>
+                export CLICOLOR=1<br>
+                PROMPT="%F{046}%n %~ $ %f"<br>
                 cat /etc/paths<br>
                 sudo vi /etc/paths<br>
+                mount /dev/cd0 /media/cdrom<br>
                 printenv
               </code>
             </div>
@@ -304,6 +305,19 @@
               </code>
             </div>
           <p>Interpreted alternative</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>third party utilites</h2>
+            <div class="sample-box">
+              <code>
+                fdupes -r .<br>
+                cloc app --exclude-dir=node_modules<br>
+                tree src/
+              </code>
+            </div>
+          <p>Extension</p>
         </div>
       </article>
       <article>
