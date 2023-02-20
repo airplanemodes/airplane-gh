@@ -43,7 +43,7 @@
     <main>
       <article>
         <div class="entry">
-          <h2>configuring express</h2>
+          <h2>express</h2>
             <div class="sample-box">
               <code>
                 const express = require('express');<br>
@@ -59,7 +59,7 @@
       </article>
       <article>
         <div class="entry">
-          <h2>connecting psql</h2>
+          <h2>psql</h2>
             <div class="sample-box">
               <code>
                 const pg = require('pg');<br><br>
@@ -141,12 +141,12 @@
                 curl -X DELETE http://localhost:4000/entries/14
               </code>
             </div>
-          <p>Testing http requests</p>
+          <p>Communication with a server</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>managing permissions</h2>
+          <h2>access control</h2>
             <div class="sample-box">
               <code>
                 chmod 755<br>
@@ -158,7 +158,7 @@
                 chflags nohidden
               </code>
             </div>
-          <p>Access control</p>
+          <p>Managing permissions</p>
         </div>
       </article>
       <article>
@@ -230,6 +230,23 @@
               </code>
             </div>
           <p>WWW grow initiator</p>
+        </div>
+      </article>
+      <article>
+        <div class="entry">
+          <h2>php</h2>
+            <div class="sample-box">
+              <code>
+                &lt;?php if ($user) : ?&gt;<br>
+                &lt;?php foreach ($arr as $item) : ?&gt;<br>
+                &lt;?php endforeach ?&gt;<br>
+                &lt;?php endif; ?&gt;<br><br>
+                if (isset($_GET['category'])) {<br>
+                  $category = $_GET['category'];<br>
+                }
+              </code>
+            </div>
+          <p>Server-side scripting</p>
         </div>
       </article>
       <article>
@@ -312,7 +329,9 @@
           <h2>third party utilites</h2>
             <div class="sample-box">
               <code>
-                wget
+                neovim<br>
+                lazygit<br>
+                wget<br>
                 fdupes -r .<br>
                 tokei --exclude package-lock.json<br>
                 tree src/
