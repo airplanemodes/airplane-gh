@@ -1,6 +1,6 @@
-/*********
+/*******************
 * Main
-**********/
+********************/
 * {
     margin: 0;
     padding: 0;
@@ -29,18 +29,17 @@ body {
 }
 
 h2 {
+    padding-bottom: 5px;
     color: var(--heading-color);
+}
+
+.box-desc {
+  padding-top: 7px;
 }
 
 #main-title {
     margin-right: auto;
     font-size: 2.0em;
-}
-
-@media screen and (max-width: 800px) {
-    #main-title {
-        font-size: 1.5em;
-    }
 }
 
 header {
@@ -54,12 +53,7 @@ header {
 header li {
     list-style: none;
     padding: 3px 20px;
-}
-
-@media screen and (min-width: 1000px) {
-    header li {
-        display: inline-block;
-    }
+    display: inline-block;
 }
 
 header a {
@@ -88,8 +82,8 @@ main {
     margin: 30px;
     padding-top: 10px;
     text-align: center;
-    width: 380px;
-    height: 200px;
+    width: 500px;
+    height: 300px;
     border: 5px var(--font-color) solid;
     border-radius: 5px;
     box-shadow: 0 1px 8px var(--font-color);
@@ -101,20 +95,13 @@ main {
     background-color: var(--secondary-color);
 }
 
-
-@media screen and (max-width: 800px) {
-    .entry {
-        width: 300px;
-    }
-}
-
 .sample-box {
     color: var(--heading-color);
     font-size: 10px;
     margin: 5px auto;
     padding: 5px;
-    height: 100px;
-    width: 220px;
+    height: 200px;
+    width: 320px;
     border: 2px var(--font-color) solid;
     background-color: var(--bg-color);
 }
@@ -126,9 +113,9 @@ main {
 
 
 
-/*********
+/*******************
 * Slider
-**********/
+********************/
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
