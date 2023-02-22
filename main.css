@@ -28,13 +28,15 @@ body {
     background-color: var(--bg-color);
 }
 
-h2 {
+.entry-heading {
+    text-align: center;
     padding-bottom: 5px;
     color: var(--heading-color);
 }
 
 .box-desc {
-  padding-top: 7px;
+    padding-top: 7px;
+    text-align: center;
 }
 
 #main-title {
@@ -81,7 +83,6 @@ main {
 .entry {
     margin: 30px;
     padding-top: 10px;
-    text-align: center;
     width: 500px;
     height: 300px;
     border: 5px var(--font-color) solid;
@@ -106,10 +107,13 @@ main {
     background-color: var(--bg-color);
 }
 
+.centered {
+    text-align: center;
+}
+
 #projects {
     margin: 30px;
 }
-
 
 
 

@@ -43,59 +43,61 @@
     <main>
       <article>
         <div class="entry">
-          <h2>express</h2>
+          <h2 class="entry-heading">express</h2>
             <div class="sample-box">
-              <code>
-                const express = require('express');<br>
-                const app = express();<br>
-                app.use(express.json());<br><br>
-                app.listen(4000, () => {<br>
-                console.log('Server works');<br>
-                });
-              </code>
+<pre>
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+let port = process.env.PORT || 4000;
+app.listen(port, () => {
+    console.log('Server works');
+});
+</pre>
             </div>
           <p class="box-desc">Launching an express server</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>psql</h2>
+          <h2 class="entry-heading">psql</h2>
             <div class="sample-box">
-              <code>
-                const pg = require('pg');<br><br>
-                const pool = new psql.Pool({<br>
-                    user: "postgres",<br>
-                    host: "localhost",<br>
-                    database: "dbname",<br>
-                    port: 5432<br>
-                });
-              </code>
+<pre>
+const pg = require('pg');
+const pool = new psql.Pool({
+    user: "postgres",
+    host: "localhost",
+    database: "dbname",
+    port: 5432
+});
+</pre>
             </div>
           <p class="box-desc">Connecting a database</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>git version control</h2>
+          <h2 class="entry-heading">git version control</h2>
             <div class="sample-box">
-              <code>
-                git init<br>
-                git add .<br>
-                git commit -m<br>
-                git remote add<br>
-                git status<br>
-                git log<br>
-                git remote -v<br>
-                git branch -M main<br>
-                git push
-              </code>
+<pre>
+$ git init
+$ git add .
+$ git commit -m 'message'
+$ git remote add
+$ git status
+$ git log
+$ git remote -v
+$ git branch -M main
+$ git push
+</pre>
             </div>
           <p class="box-desc">Managing git repository</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>file system tree</h2>
+          <h2 class="entry-heading">file system tree</h2>
             <div class="sample-box">
               <code>
                 /<br>
@@ -112,8 +114,8 @@
       </article>
       <article>
         <div class="entry">
-          <h2>unix utilites</h2>
-            <div class="sample-box">
+          <h2 class="entry-heading">unix utilites</h2>
+            <div class="sample-box centered">
               <code>
                 ls, cd, pwd, cat, less<br>
                 mv, cp, rm<br>
@@ -130,7 +132,7 @@
       </article>
       <article>
         <div class="entry">
-          <h2>curl</h2>
+          <h2 class="entry-heading">curl</h2>
             <div class="sample-box">
               <code>
                 curl https://curl.se<br>
@@ -146,42 +148,42 @@
       </article>
       <article>
         <div class="entry">
-          <h2>access control</h2>
+          <h2 class="entry-heading">access control</h2>
             <div class="sample-box">
-              <code>
-                chmod 755<br>
-                chmod 644<br>
-                chown -R user:group dir/<br>
-                chmod +x<br>
-                chmod go-rwx<br>
-                chflags hidden<br>
-                chflags nohidden
-              </code>
+<pre>
+$ chmod 755
+$ chmod 644
+$ chown -R user:group dir/
+$ chmod +x
+$ chmod go-rwx
+$ chflags hidden
+$ chflags nohidden
+</pre>
             </div>
           <p class="box-desc">Managing permissions</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>archives</h2>
+          <h2 class="entry-heading">archives</h2>
             <div class="sample-box">
-              <code>
-                tar -czf arch.tar.gz dir/<br>
-                tar -czf docs.zip info.txt doc.pdf<br>
-                tar -tvf arch.tar.gz<br>
-                tar -xf archive.tar<br>
-                zip -r scripts.zip scripts/<br>
-                gzip -r modules/<br>
-                gunzip -r modules/<br>
-              </code>
+<pre>
+$ tar -czf arch.tar.gz dir/
+$ tar -czf docs.zip info.txt doc.pdf
+$ tar -tvf arch.tar.gz
+$ tar -xf archive.tar
+$ zip -r scripts.zip scripts/
+$ gzip -r modules/
+$ gunzip -r modules/
+</pre>
             </div>
           <p class="box-desc">Archiving and compression</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>networks</h2>
-            <div class="sample-box">
+          <h2 class="entry-heading">networks</h2>
+            <div class="sample-box centered">
               <code>
                 OSI Model<br><br>
                 ARP<br>
@@ -198,100 +200,107 @@
       </article>
       <article>
         <div class="entry">
-          <h2>sql</h2>
+          <h2 class="entry-heading">sql</h2>
             <div class="sample-box">
-              <code>
-                CREATE DATABASE main;<br>
-                CREATE TABLE users (<br>
-                  id SERIAL PRIMARY KEY,<br>
-                  name VARCHAR(16) UNIQUE NOT NULL);<br><br>
-                SELECT * FROM users;<br>
-                INSERT INTO (users) VALUES ($1, $2)<br>
-                DELETE FROM users WHERE id > 1;<br>
-                DROP DATABASE main;
-              </code>
+<pre>
+CREATE DATABASE main;
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(16) UNIQUE NOT NULL
+);
+SELECT * FROM users;
+INSERT INTO (users) VALUES ($1, $2)
+DELETE FROM users WHERE id > 1;
+DROP DATABASE main;
+</pre>
             </div>
           <p class="box-desc">Database queries</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>apache http server</h2>
+          <h2 class="entry-heading">apache http server</h2>
             <div class="sample-box">
-              <code>
-                httpd -v<br>
-                sudo vi /etc/apache2/httpd.conf<br>
-                ServerRoot<br>
-                Listen<br>
-                ls /usr/libexec/apache2<br>
-                LoadModule<br>
-                DocumentRoot<br>
-                DirectoryIndex<br>
-                apachectl start
-              </code>
+<pre>
+$ httpd -v
+$ sudo vi /etc/apache2/httpd.conf
+
+ServerRoot
+Listen
+
+$ ls /usr/libexec/apache2
+
+LoadModule
+DocumentRoot
+DirectoryIndex
+
+$ apachectl start
+</pre>
             </div>
           <p class="box-desc">WWW grow initiator</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>php</h2>
+          <h2 class="entry-heading">php</h2>
             <div class="sample-box">
-              <code>
-                &lt;?php if ($user) : ?&gt;<br>
-                &lt;?php foreach ($arr as $item) : ?&gt;<br>
-                ...<br>
-                &lt;?php endforeach ?&gt;<br>
-                &lt;?php endif; ?&gt;<br><br>
-                if (isset($_GET['category'])) {<br>
-                  $category = $_GET['category'];<br>
-                }
-              </code>
+<pre>
+&lt;?php if ($user) : ?&gt;
+    &lt;?php foreach ($arr as $item) : ?&gt;
+        ...
+    &lt;?php endforeach ?&gt;
+&lt;?php endif; ?&gt;
+
+if (isset($_GET['category'])) {
+    $category = $_GET['category'];
+}
+</pre>
             </div>
           <p class="box-desc">Server-side scripting</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>search</h2>
+          <h2 class="entry-heading">search</h2>
             <div class="sample-box">
-              <code>
-                find . -type f -iname "*computer*"<br>
-                find . -type f -name "*.html"<br>
-                find dir -type d<br>
-                find . -type f -name ".*"<br>
-                find Downloads -size +250MB<br>
-                find Downloads -type f -mtime -10<br>
-                whereis node<br>
-                which python
-              </code>
+<pre>
+$ find . -type f -iname "*computer*"
+$ find . -type f -name "*.html"
+$ find dir -type d
+$ find . -type f -name ".*"
+$ find Downloads -size +250MB
+$ find Downloads -type f -mtime -10
+$ whereis node
+$ which python
+</pre>
             </div>
           <p class="box-desc">Locating</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>environmental</h2>
+          <h2 class="entry-heading">environmental</h2>
             <div class="sample-box">
-              <code>
-                vi .zshrc<br>
-                alias ls="ls -ahl"<br>
-                export PATH="$PATH:/.../"<br>
-                export CLICOLOR=1<br>
-                PROMPT="%F{046}%n %~ $ %f"<br>
-                cat /etc/paths<br>
-                sudo vi /etc/paths<br>
-                mount /dev/cd0 /media/cdrom<br>
-                printenv
-              </code>
+<pre>
+$ vi .zshrc
+alias ls="ls -ahl"
+export PATH="$PATH:/.../"
+export CLICOLOR=1
+PROMPT="%F{046}%n %~ $ %f"
+
+$ cat /etc/paths
+$ sudo vi /etc/paths
+$ mount /dev/cd0 /media/cdrom
+$ printenv
+</pre>
             </div>
           <p class="box-desc">echo $PATH</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>vim</h2>
-            <div class="sample-box">
+          <h2 class="entry-heading">vim</h2>
+            <div class="sample-box centered">
               <code>
                 :qa!<br>
                 :w<br>
@@ -309,79 +318,79 @@
       </article>
       <article>
         <div class="entry">
-          <h2>python</h2>
+          <h2 class="entry-heading">python</h2>
             <div class="sample-box">
-              <code>
-                def invert(lst):<br>
-                  for i in range(len(lst)):<br>
-                    if lst[i] &lt; 0:<br>
-                      lst[i] = abs(lst[i])<br>
-                    else:<br>
-                      lst[i] = -abs(lst[i])<br>
-                  return lst<br>
-                  ...<br>
-                  Django
-              </code>
+<pre>
+def invert(lst):
+    for i in range(len(lst)):
+        if lst[i] &lt; 0:
+            lst[i] = abs(lst[i])
+        else:
+            lst[i] = -abs(lst[i])
+    return lst
+</pre>
             </div>
           <p class="box-desc">Interpreted alternative</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>third party utilites</h2>
+          <h2 class="entry-heading">third party utilites</h2>
             <div class="sample-box">
-              <code>
-                neovim<br>
-                lazygit<br>
-                wget<br>
-                fdupes -r .<br>
-                tokei --exclude package-lock.json<br>
-                tree src/
-              </code>
+<pre>
+$ nvim
+$ lazygit
+$ wget
+$ fdupes -r .
+$ tokei --exclude package-lock.json
+$ tree src/
+</pre>
             </div>
           <p class="box-desc">Extension</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>the c programming language</h2>
+          <h2 class="entry-heading">the c programming language</h2>
             <div class="sample-box">
-              <code>
-                #include &lt;stdio.h&gt;<br>
-                int main() {<br>
-                  int arr[] = {10, 25, 30, 40};<br>
-                  int i;<br>
-                  for (i = 0; i < 4; i++) {<br>
-                    printf("Num is: %d\n", arr[i]);
-                  }<br>
-                  return 0;<br>
-                }
-              </code>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[] = {10, 25, 30, 40};
+    int i;
+    for (i = 0; i < 4; i++) {
+        printf("Num is: %d\n", arr[i]);
+    }
+    return 0;
+}
+</pre>
             </div>
           <p class="box-desc">Behind the operating system</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>c++</h2>
+          <h2 class="entry-heading">c++</h2>
             <div class="sample-box">
-              <code>
-                #include &lt;iostream&gt;<br>
-                #include &lt;string&gt;<br><br>
-                int main() {<br>
-                  std::string greetings = "Hello!";<br>
-                  std::cout << greetings;<br>
-                  return 0;<br>
-                }
-              </code>
+<pre>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string greetings = "Hello!";
+    std::cout << greetings;
+    return 0;
+}
+</pre>
             </div>
           <p class="box-desc">Desktop applications</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>virtualization</h2>
-            <div class="sample-box">
+          <h2 class="entry-heading">virtualization</h2>
+            <div class="sample-box centered">
               <code>
                 VirtualBox (x86-64)<br>
                 VMWare<br><br>
@@ -394,10 +403,10 @@
       </article>
       <article>
         <div class="entry">
-          <h2>initialization</h2>
+          <h2 class="entry-heading">initialization</h2>
             <div class="sample-box">
               <code>
-                npm init<br><br>
+                $ npm init<br><br>
                 version<br>
                 description<br>
                 keywords<br>
@@ -411,33 +420,34 @@
       </article>
       <article>
         <div class="entry">
-          <h2>react router</h2>
+          <h2 class="entry-heading">react router</h2>
             <div class="sample-box">
-              <code>
-                npm i react-router-dom<br><br>
-                import {<br>
-                    BrowserRouter<br>
-                    Routes<br>
-                    Route<br>
-                } from 'react-router-dom';
-              </code>
+<pre>
+$ npm i react-router-dom
+
+import {
+    BrowserRouter
+    Routes
+    Route
+} from 'react-router-dom';
+</pre>
             </div>
           <p class="box-desc">Client-side routing</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2>react manual setup</h2>
+          <h2 class="entry-heading">react manual setup</h2>
             <div class="sample-box">
               <code>
-                npm i react react-dom<br>
-                npm i -D @babel/core @babel/cli<br>
-                @babel/preset-react<br>
-                webpack webpack-cli<br>
-                babel-loader html-webpack-plugin<br><br>
-                touch webpack.config.js<br>
+                $ npm i react react-dom<br>
+                $ npm i -D @babel/core @babel/cli<br>
+                $ @babel/preset-react<br>
+                $ webpack webpack-cli<br>
+                $ babel-loader html-webpack-plugin<br><br>
+                $ touch webpack.config.js<br>
                 ...<br>
-                npm run build
+                $ npm run build
               </code>
             </div>
           <p class="box-desc">Understanding bundler and compiler</p>
@@ -445,8 +455,8 @@
       </article>
       <article>
         <div class="entry">
-          <h2>licensing</h2>
-            <div class="sample-box">
+          <h2 class="entry-heading">licensing</h2>
+            <div class="sample-box centered">
               <code>
                 MIT License<br>
                 GNU GPL<br>
@@ -461,8 +471,8 @@
       </article>
       <article>
         <div class="entry">
-          <h2>user agreements</h2>
-            <div class="sample-box">
+          <h2 class="entry-heading">user agreements</h2>
+            <div class="sample-box centered">
               <code>
                 General terms<br>
                 Uses and restrictions<br>
