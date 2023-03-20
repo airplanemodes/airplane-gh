@@ -225,7 +225,7 @@ CREATE TABLE users (
     img VARCHAR NOT NULL
 );
 SELECT * FROM users;
-INSERT INTO (users) VALUES ("admin", "moderator");
+INSERT INTO (users) VALUES ('admin', 'moderator');
 ALTER TABLE users ADD moderator BOOLEAN;
 UPDATE users SET moderator = true WHERE id = 2;
 DELETE FROM users WHERE id > 1;
