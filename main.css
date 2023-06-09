@@ -84,7 +84,7 @@ main {
     margin: 30px;
     padding-top: 10px;
     width: 500px;
-    height: 300px;
+    height: 320px;
     border: 5px var(--font-color) solid;
     border-radius: 5px;
     box-shadow: 0 1px 8px var(--font-color);
@@ -101,8 +101,8 @@ main {
     font-size: 10px;
     margin: 5px auto;
     padding: 5px;
-    height: 200px;
-    width: 320px;
+    height: 220px;
+    width: 340px;
     border: 2px var(--font-color) solid;
     background-color: var(--bg-color);
 }

@@ -7,6 +7,16 @@
   <title>Airplane Modes</title>
   <link href="main.css" rel="stylesheet">
 
+  <!-- Syntax highlighting -->
+  <script>
+    var cssFile = localStorage.getItem('theme') === 'dark' ? '3024.min.css' : 'github.min.css';
+    var linkElement = document.createElement('link');
+    linkElement.rel = 'stylesheet';
+    linkElement.href = cssFile;
+    document.head.appendChild(linkElement);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
   <!-- Favicons -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -45,16 +55,16 @@
         <div class="entry">
           <h2 class="entry-heading">express</h2>
             <div class="sample-box">
-<pre>
-const express = require('express');
-const app = express();
-app.use(express.json());
+    <pre><code>
+    const express = require('express');
+    const app = express();
+    app.use(express.json());
 
-let port = process.env.PORT || 4000;
-app.listen(port, () => {
-    console.log('Server works');
-});
-</pre>
+    let port = process.env.PORT || 4000;
+    app.listen(port, () => {
+        console.log('Server works');
+    });
+    </code></pre>
             </div>
           <p class="box-desc">Launching an express server</p>
         </div>
@@ -63,15 +73,15 @@ app.listen(port, () => {
         <div class="entry">
           <h2 class="entry-heading">psql</h2>
             <div class="sample-box">
-<pre>
-const pg = require('pg');
-const pool = new psql.Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "dbname",
-    port: 5432
-});
-</pre>
+    <pre><code>
+    const pg = require('pg');
+    const pool = new psql.Pool({
+        user: "postgres",
+        host: "localhost",
+        database: "dbname",
+        port: 5432
+    });
+    </code></pre>
             </div>
           <p class="box-desc">Connecting a database</p>
         </div>
@@ -80,25 +90,24 @@ const pool = new psql.Pool({
         <div class="entry">
           <h2 class="entry-heading">git version control</h2>
             <div class="sample-box">
-<pre>
-$ git init
-$ git add .
-$ git commit -m 'message'
+    <pre><code>
+    $ git init
+    $ git add .
+    $ git commit -m 'message'
+    $ git remote add origin
+    $ git remote -v
+    $ git push
 
-$ git remote add origin
-$ git remote -v
-$ git push
+    $ git status
+    $ git log
+    
+    $ git branch --list
+    $ git branch -a
+    $ git branch -c secondary
+    $ git switch secondary
 
-$ git status
-$ git log
-
-$ git branch --list
-$ git branch -a
-$ git branch -c secondary
-$ git switch secondary
-
-$ git clone https://github.com/.../repo.git
-</pre>
+    $ git clone https://github.com/.../repo.git
+    </code></pre>
             </div>
           <p class="box-desc">Managing git repository</p>
         </div>
@@ -107,16 +116,16 @@ $ git clone https://github.com/.../repo.git
         <div class="entry">
           <h2 class="entry-heading">file system tree</h2>
             <div class="sample-box">
-              <code>
-                /<br>
-                /bin<br>
-                /dev<br>
-                /etc<br>
-                /opt<br>
-                /sbin<br><br>
-                /usr/bin<br>
-                /var
-              </code>
+<pre><code class="language-plaintext">
+    /
+    /bin
+    /dev
+    /etc
+    /opt
+    /sbin
+    /usr/bin
+    /var
+</code></pre>
             </div>
           <p class="box-desc">/usr/local/bin</p>
         </div>
@@ -125,21 +134,21 @@ $ git clone https://github.com/.../repo.git
         <div class="entry">
           <h2 class="entry-heading">unix utilites</h2>
             <div class="sample-box centered">
-              <code>
-                ls, cd, man, pwd, cat, less<br>
-                mv, cp, rm<br>
-                touch, mkdir, rmdir, echo, ln<br>
-                echo, date, cal, uptime<br>
-                find, locate, grep<br><br>
-                vi, pico, tar<br>
-                chmod, chown<br><br>
-                ifconfig, route, netstat, ping, hostname<br>
-                iperf3-darwin<br><br>
-                file, mdls, strings, lldb<br><br>
-                df, du, ps, top, kill<br>
-                hexdump, objdump, md5, shasum<br>
-                whoami
-              </code>
+<pre><code class="language-plaintext">
+ls, cd, man, pwd, cat, less
+mv, cp, rm
+touch, mkdir, rmdir, echo, ln
+echo, date, cal, uptime
+find, locate, grep
+vi, pico, tar
+chmod, chown
+ifconfig, route, netstat, ping, hostname
+iperf3-darwin
+file, mdls, strings, lldb
+df, du, ps, top, kill
+hexdump, objdump, md5, shasum
+whoami
+</code></pre>
             </div>
           <p class="box-desc">Shell interaction</p>
         </div>
@@ -148,14 +157,14 @@ $ git clone https://github.com/.../repo.git
         <div class="entry">
           <h2 class="entry-heading">curl</h2>
             <div class="sample-box">
-              <code>
-                curl https://curl.se<br>
-                curl -o page.html https://curl.se<br><br>
-                curl -X POST -d '{"key":"value"}'<br>
-                -H "Content-Type: application/json"
-                http://localhost:4000/<br><br>
-                curl -X DELETE http://localhost:4000/entries/14
-              </code>
+<pre><code>
+$ curl https://curl.se
+$ curl -o page.html https://curl.se
+$ curl -X POST -d '{"key":"value"}'
+    -H "Content-Type: application/json"
+    http://localhost:4000/
+$ curl -X DELETE http://localhost:4000/entries/14
+</code></pre>
             </div>
           <p class="box-desc">Communication with a server</p>
         </div>
@@ -164,7 +173,7 @@ $ git clone https://github.com/.../repo.git
         <div class="entry">
           <h2 class="entry-heading">access control</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 $ chmod 755
 $ chmod 644
 $ chown -R user:group dir/
@@ -172,7 +181,7 @@ $ chmod +x
 $ chmod go-rwx
 $ chflags hidden
 $ chflags nohidden
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Managing permissions</p>
         </div>
@@ -181,7 +190,7 @@ $ chflags nohidden
         <div class="entry">
           <h2 class="entry-heading">archives</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 $ tar -czf arch.tar.gz dir/
 $ tar -czf docs.zip info.txt doc.pdf
 $ tar -tvf arch.tar.gz
@@ -189,7 +198,7 @@ $ tar -xf archive.tar
 $ zip -r scripts.zip scripts/
 $ gzip -r modules/
 $ gunzip -r modules/
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Archiving and compression</p>
         </div>
@@ -198,16 +207,16 @@ $ gunzip -r modules/
         <div class="entry">
           <h2 class="entry-heading">networks</h2>
             <div class="sample-box centered">
-              <code>
-                OSI Model<br><br>
-                ARP<br>
-                IPv4, IPv6, ICMP, IRC<br>
-                TCP, UDP<br>
-                DNS, FTP, HTTP, HTTPS, DHCP<br>
-                SSH<br><br>
-                local area network, subnetting<br>
-                PDU structures
-              </code>
+<pre><code class="language-plaintext">
+OSI Model
+ARP
+IPv4, IPv6, ICMP, IRC
+TCP, UDP
+DNS, FTP, HTTP, HTTPS, DHCP
+SSH
+local area network, subnetting
+PDU structures
+</code></pre>
             </div>
           <p class="box-desc">Data transmission</p>
         </div>
@@ -216,7 +225,7 @@ $ gunzip -r modules/
         <div class="entry">
           <h2 class="entry-heading">sql</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 CREATE DATABASE main;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -230,7 +239,7 @@ ALTER TABLE users ADD moderator BOOLEAN;
 UPDATE users SET moderator = true WHERE id = 2;
 DELETE FROM users WHERE id > 1;
 DROP DATABASE main;
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Database queries</p>
         </div>
@@ -239,7 +248,7 @@ DROP DATABASE main;
         <div class="entry">
           <h2 class="entry-heading">apache http server</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 $ httpd -v
 $ sudo vi /etc/apache2/httpd.conf
 
@@ -253,7 +262,7 @@ DocumentRoot
 DirectoryIndex
 
 $ apachectl start
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">WWW grow initiator</p>
         </div>
@@ -262,7 +271,7 @@ $ apachectl start
         <div class="entry">
           <h2 class="entry-heading">php</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 &lt;?php if ($user) : ?&gt;
     &lt;?php foreach ($arr as $item) : ?&gt;
         ...
@@ -272,7 +281,7 @@ $ apachectl start
 if (isset($_GET['category'])) {
     $category = $_GET['category'];
 }
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Server-side scripting</p>
         </div>
@@ -281,7 +290,7 @@ if (isset($_GET['category'])) {
         <div class="entry">
           <h2 class="entry-heading">search</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 $ find . -type f -iname "*computer*"
 $ find . -type f -name "*.html"
 $ find dir -type d
@@ -290,7 +299,7 @@ $ find Downloads -size +250MB
 $ find Downloads -type f -mtime -10
 $ whereis node
 $ which python
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Locating</p>
         </div>
@@ -299,7 +308,7 @@ $ which python
         <div class="entry">
           <h2 class="entry-heading">environmental</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 $ vi .zshrc
 alias ls="ls -ahl"
 export PATH="$PATH:/.../"
@@ -310,7 +319,7 @@ $ cat /etc/paths
 $ sudo vi /etc/paths
 $ mount /dev/cd0 /media/cdrom
 $ printenv
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">echo $PATH</p>
         </div>
@@ -319,17 +328,17 @@ $ printenv
         <div class="entry">
           <h2 class="entry-heading">vim</h2>
             <div class="sample-box centered">
-              <code>
-                :qa!<br>
-                :w<br>
-                0jjjjjkk$<br>
-                _cw<br>
-                ddp<br>
-                :!touch index.html<br>
-                :Explore<br>
-                vi vimrc<br>
-                set number
-              </code>
+<pre><code class="language-plaintext">
+:qa!
+:w
+0jjjjjkk$
+_cw
+ddp
+:!touch index.html
+:Explore
+vi vimrc
+set number
+</code></pre>
             </div>
           <p class="box-desc">Code editing in non-GUI environments</p>
         </div>
@@ -338,7 +347,7 @@ $ printenv
         <div class="entry">
           <h2 class="entry-heading">python</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 def invert(lst):
     for i in range(len(lst)):
         if lst[i] &lt; 0:
@@ -346,7 +355,7 @@ def invert(lst):
         else:
             lst[i] = -abs(lst[i])
     return lst
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Interpreted alternative</p>
         </div>
@@ -355,7 +364,7 @@ def invert(lst):
         <div class="entry">
           <h2 class="entry-heading">third party utilites</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 $ nvim
 $ lazygit
 $ wget
@@ -363,7 +372,7 @@ $ fdupes -r .
 $ tokei --exclude package-lock.json
 $ tree src/
 $ radare2
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Extension</p>
         </div>
@@ -372,7 +381,7 @@ $ radare2
         <div class="entry">
           <h2 class="entry-heading">the c programming language</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 #include &lt;stdio.h&gt;
 
 int main(int argc, char *argv[]) {
@@ -386,7 +395,7 @@ int main(int argc, char *argv[]) {
   }
   return 0;
 }
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Behind the operating system</p>
         </div>
@@ -395,7 +404,7 @@ int main(int argc, char *argv[]) {
         <div class="entry">
           <h2 class="entry-heading">c++</h2>
             <div class="sample-box">
-<pre>
+<pre><code>
 #include &lt;iostream&gt;
 #include &lt;string&gt;
 
@@ -404,7 +413,7 @@ int main() {
     std::cout << greetings;
     return 0;
 }
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Desktop applications</p>
         </div>
@@ -413,12 +422,12 @@ int main() {
         <div class="entry">
           <h2 class="entry-heading">virtualization</h2>
             <div class="sample-box centered">
-              <code>
-                VirtualBox (x86-64)<br>
-                VMWare<br><br>
-                QEMU<br><br>
-                Docker, Kubernetes
-              </code>
+<pre><code class="language-plaintext">
+VirtualBox (x86-64)
+VMWare
+QEMU
+Docker, Kubernetes
+</code></pre>
             </div>
           <p class="box-desc">Cross-platform testing</p>
         </div>
@@ -427,15 +436,15 @@ int main() {
         <div class="entry">
           <h2 class="entry-heading">initialization</h2>
             <div class="sample-box">
-              <code>
-                $ npm init<br><br>
-                version<br>
-                description<br>
-                keywords<br>
-                git repository<br>
-                author<br>
-                license
-              </code>
+<pre><code class="language-plaintext">
+$ npm init
+version
+description
+keywords
+git repository
+author
+license
+</code></pre>
             </div>
           <p class="box-desc">package.json</p>
         </div>
@@ -444,11 +453,10 @@ int main() {
         <div class="entry">
           <h2 class="entry-heading">react router</h2>
             <div class="sample-box">
-<pre>
-$ npm i react-router-dom
+<pre><code>
 import {
-    BrowserRouter
-    Routes
+    BrowserRouter,
+    Routes,
     Route
 } from 'react-router-dom';
 export default function App() {
@@ -463,41 +471,35 @@ export default function App() {
     &lt;/BrowserRouter&gt;
   );
 }
-</pre>
+</code></pre>
             </div>
           <p class="box-desc">Client-side routing</p>
         </div>
       </article>
       <article>
         <div class="entry">
-          <h2 class="entry-heading">react manual setup</h2>
-            <div class="sample-box">
-              <code>
-                $ npm i react react-dom<br>
-                $ npm i -D @babel/core @babel/cli<br>
-                $ @babel/preset-react<br>
-                $ webpack webpack-cli<br>
-                $ babel-loader html-webpack-plugin<br><br>
-                $ touch webpack.config.js<br>
-                ...<br>
-                $ npm run build
-              </code>
+          <h2 class="entry-heading">documentations</h2>
+            <div class="sample-box centered">
+<pre><code class="language-plaintext">
+docsify
+mkdocs
+</code></pre>
             </div>
-          <p class="box-desc">Understanding bundler and compiler</p>
+          <p class="box-desc">Tech sheets</p>
         </div>
       </article>
       <article>
         <div class="entry">
           <h2 class="entry-heading">licensing</h2>
             <div class="sample-box centered">
-              <code>
-                MIT License<br>
-                GNU GPL<br>
-                BSD Licenses<br>
-                ISC License<br>
-                Creative Commons<br>
-                MPL<br>
-              </code>
+<pre><code class="language-plaintext">
+MIT License
+GNU GPL
+BSD Licenses
+ISC License
+Creative Commons
+MPL
+</code></pre>
             </div>
           <p class="box-desc">Applying a license</p>
         </div>
@@ -506,22 +508,25 @@ export default function App() {
         <div class="entry">
           <h2 class="entry-heading">user agreements</h2>
             <div class="sample-box centered">
-              <code>
-                General terms<br>
-                Uses and restrictions<br>
-                Third party<br>
-                Privacy policy<br>
-                Intellectual property<br>
-                Termination<br>
-                Disclaimer<br>
-                Limitation of liability<br>
-                Contacts
-              </code>
+<pre><code class="language-plaintext">
+General terms
+Uses and restrictions
+Third party
+Privacy policy
+Intellectual property
+Termination
+Disclaimer
+Limitation of liability
+Contacts
+</code></pre>
             </div>
           <p class="box-desc">Legality</p>
         </div>
       </article>
     </main>
   <script src="toggle.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
 </body>
 </html>
