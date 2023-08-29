@@ -1,79 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airplane Modes</title>
-  <link href="main.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airplane Modes</title>
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-57x57.png" sizes="57x57" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-72x72.png" sizes="72x72" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-76x76.png" sizes="76x76" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-114x114.png" sizes="114x114" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-120x120.png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-144x144.png" sizes="144x144" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-152x152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180" />
 
-  <!-- Syntax highlighting -->
-  <script>
-    var cssFile = localStorage.getItem('theme') === 'dark' ? '3024.min.css' : 'github.min.css';
-    var linkElement = document.createElement('link');
-    linkElement.rel = 'stylesheet';
-    linkElement.href = cssFile;
-    document.head.appendChild(linkElement);
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- Syntax highlighting -->
+    <script>
+        var cssFile = localStorage.getItem('theme') === 'dark' ? '3024.min.css' : 'github.min.css';
+        var linkElement = document.createElement('link');
+        linkElement.rel = 'stylesheet';
+        linkElement.href = cssFile;
+        document.head.appendChild(linkElement);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Favicons -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon-57x57.png" sizes="57x57"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-72x72.png" sizes="72x72"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-76x76.png" sizes="76x76"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-114x114.png" sizes="114x114"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-120x120.png" sizes="120x120"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-144x144.png" sizes="144x144"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-152x152.png" sizes="152x152"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180"/>
+    <!-- Light & Dark modes -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+        {
+            document.documentElement.classList.add('dark')
+        } 
+        else 
+        {
+            document.documentElement.classList.remove('dark')
+        }
+
+        function toggle() {
+            localStorage.theme == 'light' ? localStorage.theme = 'dark' : localStorage.theme = 'light';
+            window.location.reload();
+        }
+    </script>
 </head>
-<body>
-  <header>
-    <h1 id="main-title">Airplane Modes</h1>
-      <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox"/>
-          <div class="slider round"></div>
-        </label>
-      </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Essentials</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="https://www.codewars.com/users/airplanemodes">Codewars</a></li>
-        <li><a href="https://soundcloud.com/airplanemodes">SoundCloud</a></li>
-        <li><a href="https://lichess.org/@/airplanesco">Lichess</a></li>
-        <li><a href="https://github.com/airplanemodes">GitHub</a></li>
-      </ul>
-    </nav>
-  </header>
-    <p id="intro">Hi there. My digital sketchbook.</p>
-    <main>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">express</h2>
-            <div class="sample-box">
-    <pre><code>
+<body class="font-mono bg-slate-50 dark:bg-black text-black dark:text-green-700">
+    <header class="flex items-center shadow-lg">
+        <h1 class="mr-auto text-3xl p-5 dark:text-green-500">Airplane Modes</h1>
+        <button onclick="toggle()" class="bg-neutral-950 dark:bg-green-800
+                                          text-white dark:text-black 
+                                          hover:bg-neutral-700 dark:hover:bg-green-700 
+                                          py-2 px-4 rounded">
+            Toggle
+        </button>
+        <nav>
+            <ul class="pr-2">
+                <li class="list-none inline-block p-5 text-sm">
+                    <a href="index.html" class="hover:text-neutral-500 dark:hover:text-green-500">Essentials</a>
+                </li>
+                <li class="list-none inline-block p-5 text-sm">
+                    <a href="projects.html" class="hover:text-neutral-500 dark:hover:text-green-500">Projects</a>
+                </li>
+                <li class="list-none inline-block p-5 text-sm">
+                    <a href="https://www.codewars.com/users/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">Codewars</a>
+                </li>
+                <li class="list-none inline-block p-5 text-sm">
+                    <a href="https://soundcloud.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">SoundCloud</a>
+                </li>
+                <li class="list-none inline-block p-5 text-sm">
+                    <a href="https://lichess.org/@/airplanesco" class="hover:text-neutral-500 dark:hover:text-green-500">Lichess</a>
+                </li>
+                <li class="list-none inline-block p-5 text-sm">
+                    <a href="https://github.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <p class="p-5">Hi there. My digital sketchbook.</p>
+    <main class="grid m-4 gap-8 grid-cols-3">
+
+<!-- 1 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">express</h2>
+<div class="mx-auto h-72 w-96 text-xs">
+<pre><code>
     const express = require('express');
     const app = express();
     app.use(express.json());
-
+            
     let port = process.env.PORT || 4000;
     app.listen(port, () => {
         console.log('Server works');
     });
-    </code></pre>
-            </div>
-          <p class="box-desc">Launching an express server</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">psql</h2>
-            <div class="sample-box">
-    <pre><code>
+</code></pre>
+</div>
+<p class="text-center pt-2 mb-2">Launching an express server</p>
+</div>
+        
+<!-- 2 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">psql</h2>
+<div class="mx-auto h-72 w-96 text-xs">
+<pre><code>
     const pg = require('pg');
     const pool = new psql.Pool({
         user: "postgres",
@@ -81,60 +120,65 @@
         database: "dbname",
         port: 5432
     });
-    </code></pre>
-            </div>
-          <p class="box-desc">Connecting a database</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">git version control</h2>
-            <div class="sample-box">
-    <pre><code>
+</code></pre>
+</div>
+<p class="text-center pt-2 mb-2">Connecting a database</p>
+</div>
+
+<!-- 3 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">git version control</h2>
+<div class="mx-auto h-72 w-96 text-xs">
+<pre><code>
     $ git init
     $ git add .
     $ git commit -m 'message'
     $ git remote add origin
     $ git remote -v
     $ git push
-
     $ git status
     $ git log
-    
     $ git branch --list
     $ git branch -a
     $ git branch -c secondary
     $ git switch secondary
-
     $ git clone https://github.com/.../repo.git
-    </code></pre>
-            </div>
-          <p class="box-desc">Managing git repository</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">file system tree</h2>
-            <div class="sample-box">
-<pre><code class="language-plaintext">
-    /
-    /bin
-    /dev
-    /etc
-    /opt
-    /sbin
-    /usr/bin
-    /var
 </code></pre>
-            </div>
-          <p class="box-desc">/usr/local/bin</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">unix utilites</h2>
-            <div class="sample-box centered">
-<pre><code class="language-plaintext">
+</div>
+<p class="text-center pt-2 mb-2">Managing a repository</p>
+</div>
+
+<!-- 4 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">file system tree</h2>
+<div class="mx-auto h-72 w-96 text-xs">
+<pre><code>
+    const pg = require('pg');
+    const pool = new psql.Pool({
+        user: "postgres",
+        host: "localhost",
+        database: "dbname",
+        port: 5432
+    });
+</code></pre>
+</div>
+<p class="text-center pt-2 mb-2">/usr/local/bin</p>
+</div>
+
+<!-- 5 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">unix utilites</h2>
+<div class="mx-auto h-72 w-96 text-xs">
+<pre><code class="language-plaintext text-center">
 ls, cd, man, pwd, cat, less
 mv, cp, rm
 touch, mkdir, rmdir, echo, ln
@@ -149,30 +193,36 @@ df, du, ps, top, kill
 hexdump, objdump, md5, shasum
 whoami
 </code></pre>
-            </div>
-          <p class="box-desc">Shell interaction</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">curl</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Shell interaction</p>
+</div>
+
+<!-- 6 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">curl</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ curl https://curl.se
 $ curl -o page.html https://curl.se
 $ curl -X POST -d '{"key":"value"}'
     -H "Content-Type: application/json"
     http://localhost:4000/
-$ curl -X DELETE http://localhost:4000/entries/14
+$ curl -X DELETE http://localhost:4000/entries/2
 </code></pre>
-            </div>
-          <p class="box-desc">Communication with a server</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">access control</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Communication with a server</p>
+</div>
+
+<!-- 7 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">access control</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ chmod 755
 $ chmod 644
@@ -182,14 +232,17 @@ $ chmod go-rwx
 $ chflags hidden
 $ chflags nohidden
 </code></pre>
-            </div>
-          <p class="box-desc">Managing permissions</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">archives</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Managing permissions</p>
+</div>
+
+<!-- 8 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">archives</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ tar -czf arch.tar.gz dir/
 $ tar -czf docs.zip info.txt doc.pdf
@@ -199,17 +252,20 @@ $ zip -r scripts.zip scripts/
 $ gzip -r modules/
 $ gunzip -r modules/
 </code></pre>
-            </div>
-          <p class="box-desc">Archiving and compression</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">networks</h2>
-            <div class="sample-box centered">
+</div>
+<p class="text-center pt-2 mb-2">Archiving and compression</p>
+</div>
+
+<!-- 9 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">networks</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code class="language-plaintext">
-OSI Model
-ARP
+OSPF, BGP
+ARP, NDP, NAT
 IPv4, IPv6, ICMP, IRC
 TCP, UDP
 DNS, FTP, HTTP, HTTPS, DHCP
@@ -217,37 +273,43 @@ SSH
 local area network, subnetting
 PDU structures
 </code></pre>
-            </div>
-          <p class="box-desc">Data transmission</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">sql</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Data transmission</p>
+</div>
+
+<!-- 10 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">sql</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 CREATE DATABASE main;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(16) UNIQUE NOT NULL,
     bio TEXT NOT NULL,
-    img VARCHAR NOT NULL
+    img VARCHAR
 );
 SELECT * FROM users;
-INSERT INTO (users) VALUES ('admin', 'moderator');
+INSERT INTO (users) VALUES ('admin', 'main');
 ALTER TABLE users ADD moderator BOOLEAN;
 UPDATE users SET moderator = true WHERE id = 2;
 DELETE FROM users WHERE id > 1;
 DROP DATABASE main;
 </code></pre>
-            </div>
-          <p class="box-desc">Database queries</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">apache http server</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Database queries</p>
+</div>
+
+<!-- 11 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">apache http server</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ httpd -v
 $ sudo vi /etc/apache2/httpd.conf
@@ -263,33 +325,39 @@ DirectoryIndex
 
 $ apachectl start
 </code></pre>
-            </div>
-          <p class="box-desc">WWW grow initiator</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">php</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">WWW grow initiator</p>
+</div>
+
+<!-- 12 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">php</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 &lt;?php if ($user) : ?&gt;
     &lt;?php foreach ($arr as $item) : ?&gt;
         ...
     &lt;?php endforeach ?&gt;
 &lt;?php endif; ?&gt;
-
+    
 if (isset($_GET['category'])) {
     $category = $_GET['category'];
 }
 </code></pre>
-            </div>
-          <p class="box-desc">Server-side scripting</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">search</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Server-side scripting</p>
+</div>
+
+<!-- 13 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">search</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ find . -type f -iname "*computer*"
 $ find . -type f -name "*.html"
@@ -300,14 +368,17 @@ $ find Downloads -type f -mtime -10
 $ whereis node
 $ which python
 </code></pre>
-            </div>
-          <p class="box-desc">Locating</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">environmental</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Locating</p>
+</div>
+
+<!-- 14 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">environmental</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ vi .zshrc
 alias ls="ls -ahl"
@@ -320,15 +391,18 @@ $ sudo vi /etc/paths
 $ mount /dev/cd0 /media/cdrom
 $ printenv
 </code></pre>
-            </div>
-          <p class="box-desc">echo $PATH</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">vim</h2>
-            <div class="sample-box centered">
-<pre><code class="language-plaintext">
+</div>
+<p class="text-center pt-2 mb-2">echo $PATH</p>
+</div>
+
+<!-- 15 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">vim</h2>
+<div class="mx-auto h-72 w-96 text-xs">
+<pre><code>
 :qa!
 :w
 0jjjjjkk$
@@ -339,31 +413,37 @@ ddp
 vi vimrc
 set number
 </code></pre>
-            </div>
-          <p class="box-desc">Code editing in non-GUI environments</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">python</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Text editing in non-GUI environments</p>
+</div>
+
+<!-- 16 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">python</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 def invert(lst):
     for i in range(len(lst)):
         if lst[i] &lt; 0:
             lst[i] = abs(lst[i])
         else:
-            lst[i] = -abs(lst[i])
+            lst[i] = -lst[i]
     return lst
 </code></pre>
-            </div>
-          <p class="box-desc">Interpreted alternative</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">third party utilites</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Interpreted alternative</p>
+</div>
+
+<!-- 17 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">third party utilites</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 $ nvim
 $ lazygit
@@ -374,125 +454,123 @@ $ tree src/
 $ radare2
 $ neofetch
 </code></pre>
-            </div>
-          <p class="box-desc">Extension</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">the c programming language</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Extension</p>
+</div>
+
+<!-- 18 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">the c programming language</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 #include &lt;stdio.h&gt;
 
 int main(int argc, char *argv[]) {
-  if (argc==1) {
-    printf("Knock, knock, Neo.");
-  } else if (argc==2) {
-    printf("Knock, knock, %s.\n", argv[1]);
-  } else {
-    fprintf(stderr, "Usage: %s &lt;name&gt;\n", argv[0]);
-    return 1;
-  }
-  return 0;
+if (argc==1) {
+printf("Knock, knock, Neo.");
+} else if (argc==2) {
+printf("Knock, knock, %s.\n", argv[1]);
+} else {
+fprintf(stderr, "Usage: %s &lt;name&gt;\n", argv[0]);
+return 1;
+}
+return 0;
 }
 </code></pre>
-            </div>
-          <p class="box-desc">Behind the operating system</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">c++</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Behind the operating system</p>
+</div>
+
+<!-- 19 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">c++</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
 #include &lt;iostream&gt;
 #include &lt;string&gt;
-
+    
 int main() {
     std::string greetings = "Hello!";
     std::cout << greetings;
     return 0;
 }
 </code></pre>
-            </div>
-          <p class="box-desc">Desktop applications</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">virtualization</h2>
-            <div class="sample-box centered">
+</div>
+<p class="text-center pt-2 mb-2">Desktop applications</p>
+</div>
+
+<!-- 20 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">virtualization</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code class="language-plaintext">
 VirtualBox (x86-64)
 VMWare
 QEMU
 Docker, Kubernetes
 </code></pre>
-            </div>
-          <p class="box-desc">Cross-platform testing</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">initialization</h2>
-            <div class="sample-box">
-<pre><code class="language-plaintext">
-$ npm init
-version
-description
-keywords
-git repository
-author
-license
-</code></pre>
-            </div>
-          <p class="box-desc">package.json</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">react router</h2>
-            <div class="sample-box">
+</div>
+<p class="text-center pt-2 mb-2">Cross-platform testing</p>
+</div>
+
+<!-- 21 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">react router</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
-import {
-    BrowserRouter,
-    Routes,
-    Route
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route }
+from 'react-router-dom';
 export default function App() {
-  return (
-    &lt;BrowserRouter&gt;
-      &lt;Routes&gt;
-        &lt;Route exact path='/' element={&lt;Enter/&gt;}/&gt;
-        &lt;Route path='/main' element={&lt;Main/&gt;}/&gt;
-        &lt;Route path='/profile' element={&lt;Profile/&gt;}/&gt;
-        &lt;Route path='*' element={&lt;NoPage/&gt;}/&gt;
-      &lt;/Routes&gt;
-    &lt;/BrowserRouter&gt;
+return (
+  &lt;BrowserRouter&gt;
+  &lt;Routes&gt;
+  &lt;Route exact path='/' element={&lt;Enter/&gt;}/&gt;
+  &lt;Route path='/main' element={&lt;Main/&gt;}/&gt;
+  &lt;Route path='/profile' element={&lt;Profile/&gt;}/&gt;
+  &lt;Route path='*' element={&lt;NoPage/&gt;}/&gt;
+  &lt;/Routes&gt;
+  &lt;/BrowserRouter&gt;
   );
 }
 </code></pre>
-            </div>
-          <p class="box-desc">Client-side routing</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">documentations</h2>
-            <div class="sample-box centered">
+</div>
+<p class="text-center pt-2 mb-2">Client-side routing</p>
+</div>
+
+<!-- 22 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">documentation</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code class="language-plaintext">
 docsify
 mkdocs
 </code></pre>
-            </div>
-          <p class="box-desc">Tech sheets</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">licensing</h2>
-            <div class="sample-box centered">
+</div>
+<p class="text-center pt-2 mb-2">Tech sheets</p>
+</div>
+
+<!-- 23 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">licensing</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code class="language-plaintext">
 MIT License
 GNU GPL
@@ -501,14 +579,17 @@ ISC License
 Creative Commons
 MPL
 </code></pre>
-            </div>
-          <p class="box-desc">Applying a license</p>
-        </div>
-      </article>
-      <article>
-        <div class="entry">
-          <h2 class="entry-heading">user agreements</h2>
-            <div class="sample-box centered">
+</div>
+<p class="text-center pt-2 mb-2">Applying a license</p>
+</div>
+
+<!-- 24 -->
+<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+            min-h-320 border-2 border-gray-500 dark:border-green-700 
+            shadow-lg transition-all duration-200
+            hover:bg-neutral-200 dark:hover:bg-green-950">
+<h2 class="text-center text-base pb-2  font-bold dark:text-green-600">user agreements</h2>
+<div class="mx-auto h-72 w-96 text-xs">
 <pre><code class="language-plaintext">
 General terms
 Uses and restrictions
@@ -520,14 +601,13 @@ Disclaimer
 Limitation of liability
 Contacts
 </code></pre>
-            </div>
-          <p class="box-desc">Legality</p>
-        </div>
-      </article>
-    </main>
-  <script src="toggle.js"></script>
-  <script>
-    hljs.highlightAll();
-  </script>
+</div>
+<p class="text-center pt-2 mb-2">Legality</p>
+</div>
+</main>
+    <script>
+        hljs.highlightAll();
+    </script>
 </body>
+
 </html>

@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airplane Modes</title>
-  <link href="main.css" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <h1 id="main-title">Airplane Modes</h1>
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
-      </label>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Essentials</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="https://www.codewars.com/users/airplanemodes">Codewars</a></li>
-        <li><a href="https://soundcloud.com/airplanemodes">SoundCloud</a></li>
-        <li><a href="https://lichess.org/@/airplanesco">Lichess</a></li>
-        <li><a href="https://github.com/airplanemodes">GitHub</a></li>
-      </ul>
-    </nav>
-  </header>
-    <article id="projects">
-      <h2>Mainframe</h2>
-      <br />
-      <h4>5 Jan 2023 version</h4>
-      <br />
-      <img src="mainframe2.png" width="960" height="480">
-      <br /><br /><br /><br />
-      <h4>4 Nov 2022 version</h4>
-      <br />
-      <img src="mainframe.png" width="700" height="440">
-    </article>
-  <script src="toggle.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Airplane Modes</title>
+        <!-- Favicons -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-57x57.png" sizes="57x57" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-72x72.png" sizes="72x72" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-76x76.png" sizes="76x76" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-114x114.png" sizes="114x114" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-120x120.png" sizes="120x120" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-144x144.png" sizes="144x144" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-152x152.png" sizes="152x152" />
+        <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180" />
+    
+        <!-- Syntax highlighting -->
+        <script>
+            var cssFile = localStorage.getItem('theme') === 'dark' ? '3024.min.css' : 'github.min.css';
+            var linkElement = document.createElement('link');
+            linkElement.rel = 'stylesheet';
+            linkElement.href = cssFile;
+            document.head.appendChild(linkElement);
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- Light & Dark modes -->
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+            }
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+            {
+                document.documentElement.classList.add('dark')
+            } 
+            else 
+            {
+                document.documentElement.classList.remove('dark')
+            }
+    
+            function toggle() {
+                localStorage.theme == 'light' ? localStorage.theme = 'dark' : localStorage.theme = 'light';
+                window.location.reload();
+            }
+        </script>
+    </head>
+    <body class="font-mono bg-slate-50 dark:bg-black text-black dark:text-green-700">
+        <header class="flex items-center shadow-lg">
+            <h1 class="mr-auto text-3xl p-5 dark:text-green-500">Airplane Modes</h1>
+            <button onclick="toggle()" class="bg-neutral-950 dark:bg-green-800
+                                              text-white dark:text-black 
+                                              hover:bg-neutral-700 dark:hover:bg-green-700 
+                                              py-2 px-4 rounded">
+                Toggle
+            </button>
+            <nav>
+                <ul class="pr-2">
+                    <li class="list-none inline-block p-5 text-sm">
+                        <a href="index.html" class="hover:text-neutral-500 dark:hover:text-green-500">Essentials</a>
+                    </li>
+                    <li class="list-none inline-block p-5 text-sm">
+                        <a href="projects.html" class="hover:text-neutral-500 dark:hover:text-green-500">Projects</a>
+                    </li>
+                    <li class="list-none inline-block p-5 text-sm">
+                        <a href="https://www.codewars.com/users/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">Codewars</a>
+                    </li>
+                    <li class="list-none inline-block p-5 text-sm">
+                        <a href="https://soundcloud.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">SoundCloud</a>
+                    </li>
+                    <li class="list-none inline-block p-5 text-sm">
+                        <a href="https://lichess.org/@/airplanesco" class="hover:text-neutral-500 dark:hover:text-green-500">Lichess</a>
+                    </li>
+                    <li class="list-none inline-block p-5 text-sm">
+                        <a href="https://github.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    <h2 class="p-5 font-bold text-xl">Mainframe</h2>
+    <h4 class="p-5">5 Jan 2023 version</h4>
+    <img  class="p-5" src="mainframe2.png" width="960" height="480">
+    <h4 class="p-5">4 Nov 2022 version</h4>
+    <img class="p-5" src="mainframe.png" width="700" height="440">
 </body>
 </html>
