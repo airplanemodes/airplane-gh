@@ -115,7 +115,7 @@ touch, mkdir, rmdir, ln
 echo, date, cal, uptime
 find, locate, grep
 vi, pico, tard
-chmod, chown, clang, as
+clang, as
 ifconfig, route, netstat, ping, hostname
 iperf3-darwin, traceroute, nslookup
 file, mdls, strings, lldb
@@ -176,13 +176,13 @@ $ gunzip -r modules/
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">access control</h2>
 <div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
-$ chmod 755
-$ chmod 644
-$ chown -R user:group dir/
-$ chmod +x
-$ chmod go-rwx
-$ chflags hidden
-$ chflags nohidden
+    $ chmod 755
+    $ chmod 644
+    $ chown -R user:group dir/
+    $ chmod +x
+    $ chmod go-rwx
+    $ chflags hidden
+    $ chflags nohidden
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Managing permissions</p>
@@ -196,14 +196,21 @@ $ chflags nohidden
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">networks</h2>
 <div class="mx-auto h-72 w-96 text-xs">
 <pre><code class="language-plaintext">
-OSPF, BGP
-ARP, NDP, NAT
-IPv4, IPv6, ICMP, IRC
-TCP, UDP
-DNS, FTP, HTTP, HTTPS, DHCP
-SSH
-local area network, subnetting
-PDU structures
+routing | OSPF, BGP
+mapping | ARP, NDP, NAT
+config  | DHCP
+
+IPv4, IPv6, ICMP, TCP, UDP
+DNS, FTP, HTTP, HTTPS, SSH, IRC
+
+local area networks, PDU structures
+
+subnetting 192.168.1.0/24:
+11111111.11111111.11111111.00000000
+11111111.11111111.11111111.11000000
+
+* 192.168.1.0/26    * 192.168.1.128/26
+* 192.168.1.64/26   * 192.168.1.192/26
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Data transmission</p>
@@ -250,7 +257,9 @@ _cw
 ddp
 :!touch index.html
 :Explore
-vi vimrc
+
+$ vim vimrc
+
 set number
 </code></pre>
 </div>
@@ -365,14 +374,14 @@ DROP DATABASE main;
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">environmental</h2>
 <div class="mx-auto h-72 w-96 text-xs">
 <pre><code>
-$ vi .zshrc
+$ vim .zshrc
+
 alias ls="ls -ahl"
 export PATH="$PATH:/.../"
 export CLICOLOR=1
 PROMPT="%F{046}%n %~ $ %f"
 
 $ cat /etc/paths
-$ sudo vi /etc/paths
 $ mount /dev/cd0 /media/cdrom
 $ printenv
 </code></pre>
@@ -414,6 +423,7 @@ $ brew list
 $ brew services
 $ brew update
 $ brew upgrade
+$ brew autoremove
 $ brew cleanup
 </code></pre>
 </div>
@@ -536,6 +546,9 @@ return (
 
 <!-- angluar -->
 <!-- vue -->
+<!-- encryption -->
+<!-- docker -->
+
 <!-- python -->
 <div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
             min-h-320 border-2 border-gray-500 dark:border-green-700 
