@@ -87,8 +87,7 @@ shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">file system tree</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-/
+<pre><code class="language-plaintext">/
 /bin
 /dev
 /etc
@@ -108,11 +107,10 @@ hover:bg-neutral-200 dark:hover:bg-green-950">
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">unix utilites</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-ls, cd, man, pwd, cat, less
+<pre><code class="language-plaintext">ls, cd, man, pwd, cat, less
 mv, cp, rm, w
 touch, mkdir, rmdir, ln
-echo, date, cal, uptime
+echo, date, cal, uptime, time
 find, locate, grep
 vi, pico, tard
 clang, as
@@ -134,8 +132,7 @@ whois, whoami
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">search</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ find . -type f -iname "*computer*"
+<pre><code>$ find . -type f -iname "*computer*"
 $ find . -type f -name "*.html"
 $ find dir -type d
 $ find . -type f -name ".*"
@@ -155,8 +152,7 @@ $ which python
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">archives</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ tar -czf arch.tar.gz dir/
+<pre><code>$ tar -czf arch.tar.gz dir/
 $ tar -czf docs.zip info.txt doc.pdf
 $ tar -tvf arch.tar.gz
 $ tar -xf archive.tar
@@ -175,14 +171,13 @@ $ gunzip -r modules/
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">access control</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-    $ chmod 755
-    $ chmod 644
-    $ chown -R user:group dir/
-    $ chmod +x
-    $ chmod go-rwx
-    $ chflags hidden
-    $ chflags nohidden
+<pre><code>$ chmod 755
+$ chmod 644
+$ chown -R user:group dir/
+$ chmod +x
+$ chmod go-rwx
+$ chflags hidden
+$ chflags nohidden
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Managing permissions</p>
@@ -195,8 +190,7 @@ $ gunzip -r modules/
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">networks</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-routing | OSPF, BGP
+<pre><code class="language-plaintext">routing | OSPF, BGP
 mapping | ARP, NDP, NAT
 config  | DHCP
 
@@ -222,20 +216,17 @@ subnetting 192.168.1.0/24:
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">the c programming language</h2>
-<div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-#include &lt;stdio.h&gt;
+<div class="mx-auto h-72 w-full text-xs">
+<pre><code>#include &lt;stdio.h&gt;
 
 int main(int argc, char *argv[]) {
-if (argc==1) {
-printf("Knock, knock, Neo.");
-} else if (argc==2) {
-printf("Knock, knock, %s.\n", argv[1]);
-} else {
-fprintf(stderr, "Usage: %s &lt;name&gt;\n", argv[0]);
-return 1;
-}
-return 0;
+    if (argc==1) printf("Knock, knock, Neo.");
+    else if (argc==2) printf("Knock, knock, %s.\n", argv[1]);
+    else {
+        fprintf(stderr, "Usage: %s &lt;name&gt;\n", argv[0]);
+        return 1;
+    }
+    return 0;
 }
 </code></pre>
 </div>
@@ -249,8 +240,7 @@ return 0;
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">vim</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-:qa!
+<pre><code>:qa!
 :w
 0jjjjjkk$
 _cw
@@ -273,20 +263,19 @@ shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">git version control</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-    $ git init
-    $ git add .
-    $ git commit -m 'message'
-    $ git remote add origin
-    $ git remote -v
-    $ git push
-    $ git status
-    $ git log
-    $ git branch --list
-    $ git branch -a
-    $ git branch -c secondary
-    $ git switch secondary
-    $ git clone https://github.com/.../repo.git
+<pre><code>$ git init
+$ git add .
+$ git commit -m 'message'
+$ git remote add origin
+$ git remote -v
+$ git push
+$ git status
+$ git log
+$ git branch --list
+$ git branch -a
+$ git branch -c secondary
+$ git switch secondary
+$ git clone https://github.com/.../repo.git
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Managing a repository</p>
@@ -299,8 +288,7 @@ hover:bg-neutral-200 dark:hover:bg-green-950">
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">apache http server</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ httpd -v
+<pre><code>$ httpd -v
 $ sudo vi /etc/apache2/httpd.conf
 
 ServerRoot
@@ -325,8 +313,7 @@ $ apachectl start
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">php</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-&lt;?php if ($user) : ?&gt;
+<pre><code>&lt;?php if ($user) : ?&gt;
     &lt;?php foreach ($arr as $item) : ?&gt;
         ...
     &lt;?php endforeach ?&gt;
@@ -347,8 +334,7 @@ if (isset($_GET['category'])) {
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">sql</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-CREATE DATABASE main;
+<pre><code>CREATE DATABASE main;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(16) UNIQUE NOT NULL,
@@ -373,8 +359,7 @@ DROP DATABASE main;
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">environmental</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ vim .zshrc
+<pre><code>$ vim .zshrc
 
 alias ls="ls -ahl"
 export PATH="$PATH:/.../"
@@ -396,8 +381,7 @@ $ printenv
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">curl</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ curl https://curl.se
+<pre><code>$ curl https://curl.se
 $ curl -o page.html https://curl.se
 $ curl -X POST -d '{"key":"value"}'
     -H "Content-Type: application/json"
@@ -415,8 +399,7 @@ $ curl -X DELETE http://localhost:4000/entries/2
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">homebrew</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ brew install &lt;pkg&gt;
+<pre><code>$ brew install &lt;pkg&gt;
 $ brew search &lt;pkg&gt;
 $ brew info &lt;pkg&gt;
 $ brew list
@@ -437,8 +420,7 @@ $ brew cleanup
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">npm</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ npm help
+<pre><code>$ npm help
 $ npm init
 $ npm -l
 $ npm ll
@@ -458,15 +440,14 @@ shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">express</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-    const express = require('express');
-    const app = express();
-    app.use(express.json());
-    
-    let port = process.env.PORT || 4000;
-    app.listen(port, () => {
-        console.log('Server works');
-    });
+<pre><code>const express = require('express');
+const app = express();
+app.use(express.json());
+
+let port = process.env.PORT || 4000;
+app.listen(port, () => {
+    console.log('Server works');
+});
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">REST API</p>
@@ -479,14 +460,13 @@ shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">psql</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-    const pg = require('pg');
-    const pool = new psql.Pool({
-        user: "postgres",
-        host: "localhost",
-        database: "dbname",
-        port: 5432
-    });
+<pre><code>const pg = require('pg');
+const pool = new psql.Pool({
+    user: "postgres",
+    host: "localhost",
+    database: "dbname",
+    port: 5432
+});
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Connecting a database</p>
@@ -499,8 +479,7 @@ hover:bg-neutral-200 dark:hover:bg-green-950">
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">react</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ npx create-react-app &lt;project&gt;
+<pre><code>$ npx create-react-app &lt;project&gt;
 
 import { useState } from 'react';
 import Welcome from './welcome';
@@ -524,8 +503,7 @@ export default function App() {
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">react router</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-import { BrowserRouter, Routes, Route }
+<pre><code>import { BrowserRouter, Routes, Route }
 from 'react-router-dom';
 export default function App() {
 return (
@@ -549,7 +527,7 @@ return (
 <!-- encryption -->
 
 <!-- docker -->
-<div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
+<!-- <div class="bg-white dark:bg-black rounded-lg pt-3 pb-3 
             min-h-320 border-2 border-gray-500 dark:border-green-700 
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
@@ -560,7 +538,7 @@ $ docker-compose up -d
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Containerization</p>
-</div>
+</div> -->
 
 <!-- jquery -->
 <!-- pip -->
@@ -572,8 +550,7 @@ $ docker-compose up -d
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">python</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-def invert(lst):
+<pre><code>def invert(lst):
     for i in range(len(lst)):
         if lst[i] &lt; 0:
             lst[i] = abs(lst[i])
@@ -592,8 +569,7 @@ def invert(lst):
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">third party utilites</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-$ nvim
+<pre><code>$ nvim
 $ lazygit
 $ wget
 $ fdupes -r .
@@ -613,8 +589,7 @@ $ neofetch
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">virtualization</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-VirtualBox (x86-64)
+<pre><code class="language-plaintext">VirtualBox (x86-64)
 VMWare
 QEMU
 Docker, Kubernetes
@@ -630,9 +605,9 @@ Docker, Kubernetes
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">documentation</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-docsify
+<pre><code class="language-plaintext">docsify
 mkdocs
+sphinx
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Tech sheets</p>
@@ -645,8 +620,7 @@ mkdocs
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">licensing</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-MIT License
+<pre><code class="language-plaintext">MIT License
 GNU GPL
 BSD Licenses
 Apache License
@@ -665,8 +639,7 @@ MPL
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">user agreements</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code class="language-plaintext">
-General terms
+<pre><code class="language-plaintext">General terms
 Uses and restrictions
 Third party
 Privacy policy
@@ -687,8 +660,7 @@ Contacts
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">c++</h2>
 <div class="mx-auto h-72 w-96 text-xs">
-<pre><code>
-#include &lt;iostream&gt;
+<pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
     
 int main() {
