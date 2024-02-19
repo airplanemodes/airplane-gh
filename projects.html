@@ -16,30 +16,12 @@
     <link rel="apple-touch-icon" href="apple-touch-icon-144x144.png" sizes="144x144" />
     <link rel="apple-touch-icon" href="apple-touch-icon-152x152.png" sizes="152x152" />
     <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180" />
-    
-    <!-- Syntax highlighting -->
-    <script>
-        const cssfile = localStorage.getItem('theme') === 'dark' ? '3024.min.css' : 'github.min.css';
-        let linkelement = document.createElement('link');
-        linkelement.rel = 'stylesheet';
-        linkelement.href = cssfile;
-        document.head.appendChild(linkelement);
-    </script>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Light & Dark modes -->
-    <script>
-        tailwind.config = { darkMode: 'class' }
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-            document.documentElement.classList.add('dark');
-        else 
-            document.documentElement.classList.remove('dark');
-
-        const toggle = () => {
-            localStorage.theme == 'light' ? localStorage.theme = 'dark' : localStorage.theme = 'light';
-            window.location.reload();
-        }
-    </script>
+    <script src="theme.js"></script>
 </head>
 <body class="font-mono bg-slate-50 dark:bg-black text-black dark:text-green-700">
     <header class="flex items-center shadow-lg">
@@ -53,30 +35,18 @@
         <nav>
             <ul class="pr-2">
                 <li class="list-none inline-block p-5 text-sm">
-                    <a href="index.html" class="hover:text-neutral-500 dark:hover:text-green-500">Essentials</a>
+                    <a href="index.html" class="hover:text-neutral-500 dark:hover:text-green-500">Sketchbook</a>
                 </li>
                 <li class="list-none inline-block p-5 text-sm">
                     <a href="projects.html" class="hover:text-neutral-500 dark:hover:text-green-500">Projects</a>
                 </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://www.codewars.com/users/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">Codewars</a>
-                </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://soundcloud.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">SoundCloud</a>
-                </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://lichess.org/@/airplanesco" class="hover:text-neutral-500 dark:hover:text-green-500">Lichess</a>
-                </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://github.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">GitHub</a>
-                </li>
             </ul>
         </nav>
     </header>
-    <h2 class="p-5 font-bold text-xl">Mainframe</h2>
-    <h4 class="p-5">5 Jan 2023 version</h4>
-    <img  class="p-5" src="mainframe2.png" width="960" height="480">
-    <h4 class="p-5">4 Nov 2022 version</h4>
-    <img class="p-5" src="mainframe.png" width="700" height="440">
+    <h3 class="p-5 font-bold text-xl">* Mainframe</h3>
+    <ul class="list-inside ml-2">
+        <li><a href="https://github.com/airplanemodes/mainframe-client/">airplanemodes/mainframe-client</a></li>
+        <li><a href="https://github.com/airplanemodes/mainframe-server/">airplanemodes/mainframe-server</a></li>
+    </ul>
 </body>
 </html>

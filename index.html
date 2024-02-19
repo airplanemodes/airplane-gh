@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airplane Modes</title>
+
     <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -19,31 +19,13 @@
     <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180" />
 
     <!-- Syntax highlighting -->
-    <script>
-        const cssfile = localStorage.getItem('theme') === 'dark' ? '3024.min.css' : 'github.min.css';
-        let linkelement = document.createElement('link');
-        linkelement.rel = 'stylesheet';
-        linkelement.href = cssfile;
-        document.head.appendChild(linkelement);
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Light & Dark modes -->
-    <script>
-        tailwind.config = { darkMode: 'class' }
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-            document.documentElement.classList.add('dark');
-        else 
-            document.documentElement.classList.remove('dark');
-
-        const toggle = () => {
-            localStorage.theme === 'light' ? localStorage.theme = 'dark' : localStorage.theme = 'light';
-            window.location.reload();
-        }
-    </script>
+    <script src="theme.js"></script>
 </head>
 <body class="font-mono bg-slate-50 dark:bg-black text-black dark:text-green-700">
     <header class="flex items-center shadow-lg">
@@ -57,23 +39,10 @@
         <nav>
             <ul class="pr-2">
                 <li class="list-none inline-block p-5 text-sm">
-                    <a href="index.html" class="hover:text-neutral-500 dark:hover:text-green-500">Essentials</a>
+                    <a href="index.html" class="hover:text-neutral-500 dark:hover:text-green-500">Sketchbook</a>
                 </li>
                 <li class="list-none inline-block p-5 text-sm">
                     <a href="projects.html" class="hover:text-neutral-500 dark:hover:text-green-500">Projects</a>
-                </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://www.codewars.com/users/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">Codewars</a>
-                </li>
-                
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://soundcloud.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">SoundCloud</a>
-                </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://lichess.org/@/airplanesco" class="hover:text-neutral-500 dark:hover:text-green-500">Lichess</a>
-                </li>
-                <li class="list-none inline-block p-5 text-sm">
-                    <a href="https://github.com/airplanemodes" class="hover:text-neutral-500 dark:hover:text-green-500">GitHub</a>
                 </li>
             </ul>
         </nav>
@@ -86,7 +55,7 @@ min-h-320 border-2 border-gray-500 dark:border-green-700
 shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">file system tree</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">/
 /bin
 /dev
@@ -106,7 +75,7 @@ hover:bg-neutral-200 dark:hover:bg-green-950">
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">unix utilites</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">ls, cd, man, pwd, cat, less
 mv, cp, rm, w
 touch, mkdir, rmdir, ln
@@ -131,7 +100,7 @@ whois, whoami
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">search</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ find . -type f -iname "*computer*"
 $ find . -type f -name "*.html"
 $ find dir -type d
@@ -151,7 +120,7 @@ $ which python
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">archives</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ tar -czf arch.tar.gz dir/
 $ tar -czf docs.zip info.txt doc.pdf
 $ tar -tvf arch.tar.gz
@@ -170,7 +139,7 @@ $ gunzip -r modules/
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">access control</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ chmod 755
 $ chmod 644
 $ chown -R user:group dir/
@@ -189,7 +158,7 @@ $ chflags nohidden
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">networks</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">routing | OSPF, BGP
 mapping | ARP, NDP, NAT
 config  | DHCP
@@ -239,7 +208,7 @@ int main(int argc, char *argv[]) {
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">vim</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>:qa!
 :w
 0jjjjjkk$
@@ -262,7 +231,7 @@ min-h-320 border-2 border-gray-500 dark:border-green-700
 shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">git version control</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ git init
 $ git add .
 $ git commit -m 'message'
@@ -287,7 +256,7 @@ $ git clone https://github.com/.../repo.git
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">apache http server</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ httpd -v
 $ sudo vi /etc/apache2/httpd.conf
 
@@ -312,7 +281,7 @@ $ apachectl start
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">php</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>&lt;?php if ($user) : ?&gt;
     &lt;?php foreach ($arr as $item) : ?&gt;
         ...
@@ -333,7 +302,7 @@ if (isset($_GET['category'])) {
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">sql</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>CREATE DATABASE main;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -358,7 +327,7 @@ DROP DATABASE main;
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">environmental</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ vim .zshrc
 
 alias ls="ls -ahl"
@@ -380,7 +349,7 @@ $ printenv
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">curl</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ curl https://curl.se
 $ curl -o page.html https://curl.se
 $ curl -X POST -d '{"key":"value"}'
@@ -398,7 +367,7 @@ $ curl -X DELETE http://localhost:4000/entries/2
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">homebrew</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ brew install &lt;pkg&gt;
 $ brew search &lt;pkg&gt;
 $ brew info &lt;pkg&gt;
@@ -419,7 +388,7 @@ $ brew cleanup
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">npm</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ npm help
 $ npm init
 $ npm -l
@@ -439,7 +408,7 @@ min-h-320 border-2 border-gray-500 dark:border-green-700
 shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">express</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>const express = require('express');
 const app = express();
 app.use(express.json());
@@ -459,7 +428,7 @@ min-h-320 border-2 border-gray-500 dark:border-green-700
 shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">psql</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>const pg = require('pg');
 const pool = new psql.Pool({
     user: "postgres",
@@ -478,19 +447,17 @@ const pool = new psql.Pool({
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">react</h2>
-<div class="mx-auto h-72 w-96 text-xs">
-<pre><code>$ npx create-react-app &lt;project&gt;
+<div class="mx-auto h-72 w-full text-xs">
+<pre><code>import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-import { useState } from 'react';
-import Welcome from './welcome';
-export default function App() {
-    let [user, setUser] = useState(null);
-    return (
-        &lt;div&gt;
-            &lt;Welcome/&gt;
-        &lt;/div&gt;
-    );
-}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+    &lt;React.StrictMode&gt;
+        &lt;App /&gt;
+    &lt;/React.StrictMode&gt;
+);
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">States and components</p>
@@ -502,19 +469,19 @@ export default function App() {
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">react router</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>import { BrowserRouter, Routes, Route }
 from 'react-router-dom';
 export default function App() {
-return (
-  &lt;BrowserRouter&gt;
-  &lt;Routes&gt;
-  &lt;Route exact path='/' element={&lt;Enter/&gt;}/&gt;
-  &lt;Route path='/main' element={&lt;Main/&gt;}/&gt;
-  &lt;Route path='/profile' element={&lt;Profile/&gt;}/&gt;
-  &lt;Route path='*' element={&lt;NoPage/&gt;}/&gt;
-  &lt;/Routes&gt;
-  &lt;/BrowserRouter&gt;
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route exact path='/' element={&lt;Enter/&gt;}/&gt;
+        &lt;Route path='/main' element={&lt;Main/&gt;}/&gt;
+        &lt;Route path='/profile' element={&lt;Profile/&gt;}/&gt;
+        &lt;Route path='*' element={&lt;NoPage/&gt;}/&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
   );
 }
 </code></pre>
@@ -532,7 +499,7 @@ return (
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">docker</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>
 $ docker-compose up -d
 </code></pre>
@@ -549,14 +516,14 @@ $ docker-compose up -d
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">python</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>def invert(lst):
-    for i in range(len(lst)):
-        if lst[i] &lt; 0:
-            lst[i] = abs(lst[i])
-        else:
-            lst[i] = -lst[i]
-    return lst
+for i in range(len(lst)):
+    if lst[i] &lt; 0:
+        lst[i] = abs(lst[i])
+    else:
+        lst[i] = -lst[i]
+return lst
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Interpreted alternative</p>
@@ -568,7 +535,7 @@ $ docker-compose up -d
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">third party utilites</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>$ nvim
 $ lazygit
 $ wget
@@ -588,7 +555,7 @@ $ neofetch
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">virtualization</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">VirtualBox (x86-64)
 VMWare
 QEMU
@@ -604,7 +571,7 @@ Docker, Kubernetes
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">documentation</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">docsify
 mkdocs
 sphinx
@@ -619,7 +586,7 @@ sphinx
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">licensing</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">MIT License
 GNU GPL
 BSD Licenses
@@ -638,7 +605,7 @@ MPL
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">user agreements</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code class="language-plaintext">General terms
 Uses and restrictions
 Third party
@@ -659,7 +626,7 @@ Contacts
             shadow-lg transition-all duration-200
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">c++</h2>
-<div class="mx-auto h-72 w-96 text-xs">
+<div class="mx-auto h-72 w-full text-xs">
 <pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
     
