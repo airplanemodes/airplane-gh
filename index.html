@@ -101,14 +101,15 @@ whois, whoami
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">search</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ find . -type f -iname "*computer*"
-$ find . -type f -name "*.html"
-$ find dir -type d
-$ find . -type f -name ".*"
-$ find Downloads -size +250MB
-$ find Downloads -type f -mtime -10
-$ whereis node
-$ which python
+<pre><code>man find
+find . -type f -iname "*computer*"
+find . -type f -name "*.html"
+find dir -type d
+find . -type f -name ".*"
+find Downloads -size +250MB
+find Downloads -type f -mtime -10
+whereis node
+which python
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Locating</p>
@@ -121,13 +122,14 @@ $ which python
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">archives</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ tar -czf arch.tar.gz dir/
-$ tar -czf docs.zip info.txt doc.pdf
-$ tar -tvf arch.tar.gz
-$ tar -xf archive.tar
-$ zip -r scripts.zip scripts/
-$ gzip -r modules/
-$ gunzip -r modules/
+<pre><code>man tar
+tar -acvf arch.tar.gz dir/
+tar -czf docs.zip info.txt doc.pdf
+tar -tvf arch.tar.gz
+tar -xf archive.tar
+zip -r scripts.zip scripts/
+gzip -r modules/
+gunzip -r modules/
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Archiving and compression</p>
@@ -140,13 +142,15 @@ $ gunzip -r modules/
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">access control</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ chmod 755
-$ chmod 644
-$ chown -R user:group dir/
-$ chmod +x
-$ chmod go-rwx
-$ chflags hidden
-$ chflags nohidden
+<pre><code>man chmod
+man chown
+chmod 755
+chmod 644
+chown -R user:group dir/
+chmod +x
+chmod go-rwx
+chflags hidden
+chflags nohidden
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Managing permissions</p>
@@ -209,17 +213,22 @@ int main(int argc, char *argv[]) {
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">vim</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>:qa!
+<pre><code>man vim
+:qa!
 :w
 0jjjjjkk$
-_cw
+yyp
 ddp
+5dd
+d$
+wwwbb
+cw
+r
+xxs
+:30eeea
+Ggg}}{{
 :!touch index.html
 :Explore
-
-$ vim vimrc
-
-set number
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Text editing</p>
@@ -232,19 +241,20 @@ shadow-lg transition-all duration-200
 hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">git version control</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ git init
-$ git add .
-$ git commit -m 'message'
-$ git remote add origin
-$ git remote -v
-$ git push
-$ git status
-$ git log
-$ git branch --list
-$ git branch -a
-$ git branch -c secondary
-$ git switch secondary
-$ git clone https://github.com/.../repo.git
+<pre><code>man git
+git init
+git add .
+git commit -m 'message'
+git remote add origin
+git remote -v
+git push
+git status
+git log
+git branch --list
+git branch -a
+git branch -c secondary
+git switch secondary
+git clone https://github.com/.../repo.git
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Managing a repository</p>
@@ -257,19 +267,20 @@ $ git clone https://github.com/.../repo.git
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">apache http server</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ httpd -v
-$ sudo vi /etc/apache2/httpd.conf
+<pre><code>man httpd
+httpd -v
+sudo vi /etc/apache2/httpd.conf
 
 ServerRoot
 Listen
 
-$ ls /usr/libexec/apache2
+ls /usr/libexec/apache2
 
 LoadModule
 DocumentRoot
 DirectoryIndex
 
-$ apachectl start
+apachectl start
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">WWW grow initiator</p>
@@ -328,16 +339,16 @@ DROP DATABASE main;
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">environmental</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ vim .zshrc
+<pre><code>vim .zshrc
 
 alias ls="ls -ahl"
 export PATH="$PATH:/.../"
 export CLICOLOR=1
 PROMPT="%F{046}%n %~ $ %f"
 
-$ cat /etc/paths
-$ mount /dev/cd0 /media/cdrom
-$ printenv
+cat /etc/paths
+mount /dev/cd0 /media/cdrom
+printenv
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">echo $PATH</p>
@@ -350,12 +361,13 @@ $ printenv
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">curl</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ curl https://curl.se
-$ curl -o page.html https://curl.se
-$ curl -X POST -d '{"key":"value"}'
+<pre><code>man curl
+curl https://curl.se
+curl -o page.html https://curl.se
+curl -X POST -d '{"key":"value"}'
     -H "Content-Type: application/json"
     http://localhost:4000/
-$ curl -X DELETE http://localhost:4000/entries/2
+curl -X DELETE http://localhost:4000/entries/2
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Communication with a server</p>
@@ -368,15 +380,16 @@ $ curl -X DELETE http://localhost:4000/entries/2
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">homebrew</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ brew install &lt;pkg&gt;
-$ brew search &lt;pkg&gt;
-$ brew info &lt;pkg&gt;
-$ brew list
-$ brew services
-$ brew update
-$ brew upgrade
-$ brew autoremove
-$ brew cleanup
+<pre><code>man brew
+brew install &lt;pkg&gt;
+brew search &lt;pkg&gt;
+brew info &lt;pkg&gt;
+brew list
+brew services
+brew update
+brew upgrade
+brew autoremove
+brew cleanup
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">The missing package manager</p>
@@ -389,14 +402,15 @@ $ brew cleanup
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">npm</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ npm help
-$ npm init
-$ npm -l
-$ npm ll
-$ npm view &lt;pkg&gt;
-$ npm install &lt;pkg&gt; -D
-$ npm outdated
-$ npm ping
+<pre><code>man npm
+npm help
+npm init
+npm -l
+npm ll
+npm view &lt;pkg&gt;
+npm install &lt;pkg&gt; -D
+npm outdated
+npm ping
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">node modules</p>
@@ -536,14 +550,14 @@ return lst
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">third party utilites</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>$ nvim
-$ lazygit
-$ wget
-$ fdupes -r .
-$ tokei --exclude package-lock.json
-$ tree src/
-$ radare2
-$ neofetch
+<pre><code>nvim
+lazygit
+wget
+fdupes -r .
+tokei --exclude package-lock.json
+tree src/
+radare2
+neofetch
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Extension</p>
