@@ -293,15 +293,15 @@ apachectl start
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">php</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>&lt;?php if ($user) : ?&gt;
+<pre><code>if (isset($_GET['category'])) {
+    $category = $_GET['category'];
+}
+
+&lt;?php if ($user) : ?&gt;
     &lt;?php foreach ($arr as $item) : ?&gt;
         ...
     &lt;?php endforeach ?&gt;
 &lt;?php endif; ?&gt;
-    
-if (isset($_GET['category'])) {
-    $category = $_GET['category'];
-}
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Server-side scripting</p>
@@ -503,6 +503,8 @@ export default function App() {
 <p class="text-center pt-2 mb-2">Client-side routing</p>
 </div>
 
+<!-- html -->
+<!-- css -->
 <!-- angluar -->
 <!-- vue -->
 <!-- encryption -->
@@ -531,13 +533,17 @@ $ docker-compose up -d
             hover:bg-neutral-200 dark:hover:bg-green-950">
 <h2 class="text-center text-base pb-2  font-bold dark:text-green-600">python</h2>
 <div class="mx-auto h-72 w-full text-xs">
-<pre><code>def invert(lst):
-for i in range(len(lst)):
-    if lst[i] &lt; 0:
-        lst[i] = abs(lst[i])
-    else:
-        lst[i] = -lst[i]
-return lst
+<pre><code>class Cube(object):
+    def __init__(self, side=0):
+        self.side = side
+    
+    def get_side(self):
+        """Return the side of the Cube"""
+        return abs(self.side)
+
+    def set_side(self, new_side):
+        """Set the value of the Cube's side."""
+        self.side = new_side
 </code></pre>
 </div>
 <p class="text-center pt-2 mb-2">Interpreted alternative</p>
@@ -643,10 +649,19 @@ Contacts
 <div class="mx-auto h-72 w-full text-xs">
 <pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
-    
+using namespace std;
+class Solution {
+public:
+    static bool isPalindrome(int x) {
+        string original = to_string(x);
+        string reversed = to_string(x);
+        reverse(reversed.begin(), reversed.end());
+        return (original == reversed) ? true : false;
+    }
+};
 int main() {
-    std::string greetings = "Hello!";
-    std::cout << greetings;
+    cout << Solution::isPalindrome(121) << endl;
+    cout << Solution::isPalindrome(123) << endl;
     return 0;
 }
 </code></pre>
